@@ -34,24 +34,32 @@ PROGRAM riemann_approx_solver_hw3
     uR = 0.0_dp
     x_diaphragm = 5.0_dp
     
-    ! --- (Steps 1-5: Calculations for Roe averages, waves, etc. are the same) ---
+    ! --- Step 1: Compute derived quantities ---
     etL = pL/(rhoL*(gam-1.0_dp)) + 0.5_dp*uL**2
     htL = etL + pL/rhoL
     etR = pR/(rhoR*(gam-1.0_dp)) + 0.5_dp*uR**2
     htR = etR + pR/rhoR
+    
+    ! --- Step 2: Compute Roe-averaged quantities ---
     rhoRL = sqrt(rhoR*rhoL)
     uRL = (sqrt(rhoR)*uR + sqrt(rhoL)*uL) / (sqrt(rhoR)+sqrt(rhoL))
     hRL = (sqrt(rhoR)*htR + sqrt(rhoL)*htL) / (sqrt(rhoR)+sqrt(rhoL))
     aRL = sqrt((gam-1.0_dp)*(hRL - 0.5_dp*uRL**2))
+    
+    ! --- Step 3: Compute the Roe-average wave speeds ---
     ld1 = uRL
     ld2 = uRL + aRL
     ld3 = uRL - aRL
+    
+    ! --- Step 4: Compute wave strengths ---
     drho = rhoR - rhoL
     dp_jump = pR - pL
     du = uR - uL
     dv1 = drho - dp_jump/aRL**2
     dv2 = du + dp_jump/(rhoRL*aRL)
     dv3 = du - dp_jump/(rhoRL*aRL)
+
+    ! --- Step 5: Compute right characteristic vectors ---
     r1(1) = 1.0_dp; r1(2) = uRL; r1(3) = 0.5_dp*uRL**2
     r2(1) = 1.0_dp; r2(2) = uRL + aRL; r2(3) = hRL + aRL*uRL
     r2(:) = 0.5_dp*rhoRL/aRL * r2(:)
