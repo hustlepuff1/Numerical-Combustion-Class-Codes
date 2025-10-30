@@ -1,0 +1,1364 @@
+
+ *******************************************************************************
+
+         NASA-GLENN CHEMICAL EQUILIBRIUM PROGRAM CEA2, FEBRUARY 5, 2004
+                   BY  BONNIE MCBRIDE AND SANFORD GORDON
+      REFS: NASA RP-1311, PART I, 1994 AND NASA RP-1311, PART II, 1996
+
+ *******************************************************************************
+
+
+
+  
+ ### CEA analysis performed on Wed 29-Oct-2025 23:13:48
+  
+ # Problem Type: "Assigned Enthalpy and Pressure"
+  
+ prob case = problem1_______7015 hp
+  
+ # Pressure (3 values):
+ p,atm= 1, 3, 5
+  
+ # Equivalence based on Fuel/Oxid. wt ratio (Eq 9.19*) (15 values):
+ phi = 0.4, 0.7, 1, 1.3, 1.6, 1.9, 2.2, 2.5, 2.8, 3.1, 3.4, 3.7, 4, 4.3, 4.6
+  
+ # You selected the following fuels and oxidizers:
+ reac
+ fuel H2                wt%=100.0000  t,k= 500.000
+ oxid O2                wt%=100.0000  t,k= 500.000
+  
+ # You selected these options for output:
+ # long version of output
+ # Proportions of any products will be expressed as Mass Fractions.
+ output massf
+ # Heat will be expressed as siunits
+ output siunits
+ # Transport properties calculated
+ output transport
+  
+  
+ # Input prepared by this script:/var/www/sites/cearun/cgi-bin/CEARUN/prepareInpu
+ tFile.cgi
+  
+ ### IMPORTANT:  The following line is the end of your CEA input file!
+ end
+
+ OPTIONS: TP=F  HP=T  SP=F  TV=F  UV=F  SV=F  DETN=F  SHOCK=F  REFL=F  INCD=F
+ RKT=F  FROZ=F  EQL=F  IONS=F  SIUNIT=T  DEBUGF=F  SHKDBG=F  DETDBG=F  TRNSPT=T
+
+ TRACE= 0.00E+00  S/R= 0.000000E+00  H/R= 0.000000E+00  U/R= 0.000000E+00
+
+ P,BAR =     1.013250     3.039750     5.066250
+
+    REACTANT          WT.FRAC   (ENERGY/R),K   TEMP,K  DENSITY
+        EXPLODED FORMULA
+ F: H2               1.000000   0.707503E+03   500.00  0.0000
+          H  2.00000
+ O: O2               1.000000   0.731913E+03   500.00  0.0000
+          O  2.00000
+
+  SPECIES BEING CONSIDERED IN THIS SYSTEM
+ (CONDENSED PHASE MAY HAVE NAME LISTED SEVERAL TIMES)
+  LAST thermo.inp UPDATE:    9/09/04
+
+  g 6/97  *H               g 4/02  HO2              tpis78  *H2            
+  g 8/89  H2O              g 6/99  H2O2             g 5/97  *O             
+  g 4/02  *OH              tpis89  *O2              g 8/01  O3             
+  g11/99  H2O(cr)          g 8/01  H2O(L)           g 8/01  H2O(L)         
+
+ SPECIES WITH TRANSPORT PROPERTIES
+
+        PURE SPECIES
+
+  H                 H2                H2O               O               
+  OH                O2              
+
+     BINARY INTERACTIONS
+
+     H               H2              
+     H               O               
+     H2              H2O             
+     H2              O2              
+     H2O             O2              
+     O               O2              
+
+
+ O/F =  19.841707
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.38615233E+02
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.47602749E-01
+  *O                   0.00000000E+00      0.62502344E-01      0.59503437E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=   19.84171  %FUEL=  4.798072  R,EQ.RATIO= 0.400000  PHI,EQ.RATIO= 0.400000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             2848.19  2946.79  2991.82
+ RHO, KG/CU M    9.6078-2 2.8108-1 4.6330-1
+ H, KJ/KG          321.07   321.07   321.07
+ U, KJ/KG         -733.55  -760.37  -772.44
+ G, KJ/KG        -35744.1 -35799.2 -35791.5
+ S, KJ/(KG)(K)    12.6625  12.2575  12.0704
+
+ M, (1/n)          22.455   22.656   22.748
+ (dLV/dLP)t      -1.02768 -1.02320 -1.02121
+ (dLV/dLT)p        1.6151   1.5032   1.4555
+ Cp, KJ/(KG)(K)    7.1777   6.1271   5.6982
+ GAMMAs            1.1197   1.1263   1.1295
+ SON VEL,M/SEC     1086.7   1103.6   1111.4
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.97145  0.99304   1.0027
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)    7.1777   6.1271   5.6982
+ CONDUCTIVITY     16.3513  13.5829  12.4361
+ PRANDTL NUMBER    0.4264   0.4479   0.4594
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    2.0457   2.0568   2.0618
+ CONDUCTIVITY      2.7912   2.8630   2.8955
+ PRANDTL NUMBER    0.7120   0.7134   0.7140
+
+ MASS FRACTIONS
+
+ *H               0.00060  0.00044  0.00037
+ HO2              0.00016  0.00025  0.00031
+ *H2              0.00176  0.00146  0.00133
+ H2O              0.36734  0.37310  0.37588
+ H2O2             0.00001  0.00001  0.00002
+ *O               0.02812  0.02328  0.02110
+ *OH              0.07612  0.07298  0.07109
+ *O2              0.52590  0.52847  0.52990
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ O3              H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =  11.338118
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.49464877E+02
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.80411172E-01
+  *O                   0.00000000E+00      0.62502344E-01      0.57436552E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=   11.33812  %FUEL=  8.104964  R,EQ.RATIO= 0.700000  PHI,EQ.RATIO= 0.700000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             3049.84  3188.72  3255.06
+ RHO, KG/CU M    7.0855-2 2.0605-1 3.3860-1
+ H, KJ/KG          411.28   411.28   411.28
+ U, KJ/KG        -1018.75 -1063.96 -1084.98
+ G, KJ/KG        -47439.7 -47986.9 -48227.0
+ S, KJ/(KG)(K)    15.6897  15.1780  14.9424
+
+ M, (1/n)          17.732   17.972   18.088
+ (dLV/dLP)t      -1.06375 -1.05679 -1.05350
+ (dLV/dLT)p        2.2781   2.0959   2.0147
+ Cp, KJ/(KG)(K)   14.7712  12.5442  11.6077
+ GAMMAs            1.1123   1.1176   1.1201
+ SON VEL,M/SEC     1261.2   1284.0   1294.6
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE   1.0143   1.0473   1.0627
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)   14.7712  12.5442  11.6077
+ CONDUCTIVITY     35.6148  30.6838  28.5295
+ PRANDTL NUMBER    0.4207   0.4281   0.4324
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    2.6361   2.6531   2.6609
+ CONDUCTIVITY      3.7914   3.9109   3.9668
+ PRANDTL NUMBER    0.7052   0.7105   0.7128
+
+ MASS FRACTIONS
+
+ *H               0.00285  0.00232  0.00208
+ HO2              0.00016  0.00026  0.00033
+ *H2              0.00856  0.00780  0.00742
+ H2O              0.55355  0.56499  0.57077
+ H2O2             0.00001  0.00002  0.00002
+ *O               0.04551  0.04017  0.03763
+ *OH              0.12977  0.12993  0.12942
+ *O2              0.25959  0.25451  0.25234
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ O3              H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =   7.936683
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.59586087E+02
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.11101687E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.55508435E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=    7.93668  %FUEL= 11.189834  R,EQ.RATIO= 1.000000  PHI,EQ.RATIO= 1.000000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             3098.94  3249.86  3322.91
+ RHO, KG/CU M    5.7714-2 1.6753-1 2.7504-1
+ H, KJ/KG          495.43   495.43   495.43
+ U, KJ/KG        -1260.20 -1318.97 -1346.56
+ G, KJ/KG        -56516.6 -57285.0 -57639.4
+ S, KJ/(KG)(K)    18.3973  17.7794  17.4952
+
+ M, (1/n)          14.676   14.893   14.999
+ (dLV/dLP)t      -1.08072 -1.07388 -1.07062
+ (dLV/dLT)p        2.5763   2.3828   2.2961
+ Cp, KJ/(KG)(K)   20.7441  17.7606  16.4979
+ GAMMAs            1.1118   1.1168   1.1192
+ SON VEL,M/SEC     1397.1   1423.5   1435.8
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE   1.0051   1.0415   1.0588
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)   20.7441  17.7606  16.4979
+ CONDUCTIVITY     44.4018  38.6996  36.1983
+ PRANDTL NUMBER    0.4696   0.4780   0.4826
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    3.1782   3.1997   3.2097
+ CONDUCTIVITY      4.6085   4.7603   4.8316
+ PRANDTL NUMBER    0.6931   0.7000   0.7034
+
+ MASS FRACTIONS
+
+ *H               0.00567  0.00482  0.00444
+ HO2              0.00009  0.00015  0.00019
+ *H2              0.02106  0.02023  0.01978
+ H2O              0.68936  0.70441  0.71218
+ H2O2             0.00001  0.00001  0.00002
+ *O               0.03826  0.03346  0.03118
+ *OH              0.13539  0.13533  0.13469
+ *O2              0.11015  0.10159  0.09752
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ O3              H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =   6.105141
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.69049839E+02
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.13963447E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.53705566E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=    6.10514  %FUEL= 14.074317  R,EQ.RATIO= 1.300000  PHI,EQ.RATIO= 1.300000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             3074.00  3218.93  3288.45
+ RHO, KG/CU M    4.9779-2 1.4460-1 2.3749-1
+ H, KJ/KG          574.12   574.12   574.12
+ U, KJ/KG        -1461.37 -1528.05 -1559.14
+ G, KJ/KG        -63528.9 -64225.6 -64531.6
+ S, KJ/(KG)(K)    20.8533  20.1308  19.7983
+
+ M, (1/n)          12.557   12.732   12.817
+ (dLV/dLP)t      -1.06881 -1.06150 -1.05799
+ (dLV/dLT)p        2.3504   2.1588   2.0725
+ Cp, KJ/(KG)(K)   21.3440  18.0617  16.6717
+ GAMMAs            1.1143   1.1198   1.1225
+ SON VEL,M/SEC     1506.0   1534.3   1547.5
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.97003   1.0038   1.0197
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)   21.3440  18.0617  16.6717
+ CONDUCTIVITY     43.1774  37.1641  34.5222
+ PRANDTL NUMBER    0.4795   0.4878   0.4924
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    3.6755   3.7003   3.7117
+ CONDUCTIVITY      5.2885   5.4598   5.5396
+ PRANDTL NUMBER    0.6742   0.6803   0.6832
+
+ MASS FRACTIONS
+
+ *H               0.00779  0.00666  0.00615
+ HO2              0.00004  0.00007  0.00008
+ *H2              0.03925  0.03890  0.03868
+ H2O              0.77875  0.79368  0.80135
+ H2O2             0.00000  0.00001  0.00001
+ *O               0.02309  0.01914  0.01731
+ *OH              0.11071  0.10745  0.10521
+ *O2              0.04036  0.03411  0.03120
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ O3              H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =   4.960427
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.77918180E+02
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.16645160E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.52016124E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=    4.96043  %FUEL= 16.777322  R,EQ.RATIO= 1.600000  PHI,EQ.RATIO= 1.600000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             3004.70  3133.45  3193.78
+ RHO, KG/CU M    4.4656-2 1.3003-1 2.1384-1
+ H, KJ/KG          647.85   647.85   647.85
+ U, KJ/KG        -1621.14 -1689.86 -1721.28
+ G, KJ/KG        -68751.7 -69141.7 -69271.7
+ S, KJ/(KG)(K)    23.0970  22.2724  21.8924
+
+ M, (1/n)          11.010   11.145   11.209
+ (dLV/dLP)t      -1.04704 -1.04026 -1.03708
+ (dLV/dLT)p        1.9369   1.7725   1.6996
+ Cp, KJ/(KG)(K)   18.3273  15.3011  14.0377
+ GAMMAs            1.1205   1.1273   1.1307
+ SON VEL,M/SEC     1594.5   1623.4   1636.7
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.92300  0.95156  0.96468
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)   18.3273  15.3011  14.0377
+ CONDUCTIVITY     38.1102  32.2973  29.7670
+ PRANDTL NUMBER    0.4439   0.4508   0.4549
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    4.1283   4.1546   4.1665
+ CONDUCTIVITY      5.8188   5.9931   6.0725
+ PRANDTL NUMBER    0.6549   0.6597   0.6619
+
+ MASS FRACTIONS
+
+ *H               0.00850  0.00714  0.00652
+ HO2              0.00002  0.00002  0.00003
+ *H2              0.06207  0.06239  0.06251
+ H2O              0.82779  0.83997  0.84609
+ *O               0.01119  0.00859  0.00745
+ *OH              0.07723  0.07174  0.06858
+ *O2              0.01320  0.01015  0.00882
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ H2O2            O3              H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =   4.177201
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.86245585E+02
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.19163298E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.50429732E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=    4.17720  %FUEL= 19.315455  R,EQ.RATIO= 1.900000  PHI,EQ.RATIO= 1.900000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             2911.69  3020.83  3070.42
+ RHO, KG/CU M    4.1185-2 1.2031-1 1.9820-1
+ H, KJ/KG          717.09   717.09   717.09
+ U, KJ/KG        -1743.14 -1809.53 -1839.09
+ G, KJ/KG        -72534.2 -72490.0 -72382.9
+ S, KJ/(KG)(K)    25.1576  24.2341  23.8078
+
+ M, (1/n)           9.840    9.941    9.987
+ (dLV/dLP)t      -1.03067 -1.02523 -1.02275
+ (dLV/dLT)p        1.6216   1.4945   1.4396
+ Cp, KJ/(KG)(K)   15.2717  12.7442  11.7084
+ GAMMAs            1.1297   1.1381   1.1423
+ SON VEL,M/SEC     1667.1   1695.8   1708.8
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.87282  0.89596  0.90628
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)   15.2717  12.7442  11.7084
+ CONDUCTIVITY     32.4447  27.1059  24.8208
+ PRANDTL NUMBER    0.4108   0.4213   0.4275
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    4.5393   4.5655   4.5770
+ CONDUCTIVITY      6.1943   6.3570   6.4292
+ PRANDTL NUMBER    0.6396   0.6435   0.6452
+
+ MASS FRACTIONS
+
+ *H               0.00796  0.00647  0.00581
+ HO2              0.00001  0.00001  0.00001
+ *H2              0.08754  0.08837  0.08872
+ H2O              0.84683  0.85573  0.86007
+ *O               0.00474  0.00334  0.00277
+ *OH              0.04884  0.04322  0.04025
+ *O2              0.00408  0.00286  0.00237
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ H2O2            O3              H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =   3.607583
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.94080084E+02
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.21532385E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.48937240E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=    3.60758  %FUEL= 21.703353  R,EQ.RATIO= 2.200000  PHI,EQ.RATIO= 2.200000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             2808.81  2898.17  2937.30
+ RHO, KG/CU M    3.8733-2 1.1355-1 1.8741-1
+ H, KJ/KG          782.23   782.23   782.23
+ U, KJ/KG        -1833.74 -1894.80 -1921.11
+ G, KJ/KG        -75220.5 -74685.4 -74321.0
+ S, KJ/(KG)(K)    27.0587  26.0398  25.5688
+
+ M, (1/n)           8.927    9.001    9.034
+ (dLV/dLP)t      -1.02014 -1.01591 -1.01405
+ (dLV/dLT)p        1.4170   1.3200   1.2792
+ Cp, KJ/(KG)(K)   13.0162  10.9335  10.0971
+ GAMMAs            1.1409   1.1511   1.1562
+ SON VEL,M/SEC     1727.6   1755.5   1767.9
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.82404  0.84229  0.85015
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)   13.0162  10.9335  10.0971
+ CONDUCTIVITY     27.0232  22.2941  20.3192
+ PRANDTL NUMBER    0.3969   0.4131   0.4225
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    4.9127   4.9377   4.9483
+ CONDUCTIVITY      6.4346   6.5775   6.6387
+ PRANDTL NUMBER    0.6291   0.6323   0.6337
+
+ MASS FRACTIONS
+
+ *H               0.00673  0.00526  0.00463
+ *H2              0.11377  0.11483  0.11527
+ H2O              0.84718  0.85336  0.85625
+ *O               0.00186  0.00120  0.00095
+ *OH              0.02920  0.02455  0.02226
+ *O2              0.00124  0.00080  0.00063
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ HO2             H2O2            O3              H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =   3.174673
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.10146418E+03
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.23765275E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.47530550E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=    3.17467  %FUEL= 23.953971  R,EQ.RATIO= 2.500000  PHI,EQ.RATIO= 2.500000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             2703.09  2773.71  2803.33
+ RHO, KG/CU M    3.6952-2 1.0873-1 1.7979-1
+ H, KJ/KG          843.62   843.62   843.62
+ U, KJ/KG        -1898.44 -1952.00 -1974.20
+ G, KJ/KG        -77058.1 -76012.1 -75391.7
+ S, KJ/(KG)(K)    28.8195  27.7087  27.1945
+
+ M, (1/n)           8.196    8.249    8.272
+ (dLV/dLP)t      -1.01326 -1.01002 -1.00865
+ (dLV/dLT)p        1.2816   1.2077   1.1776
+ Cp, KJ/(KG)(K)   11.3643   9.6507   8.9802
+ GAMMAs            1.1539   1.1659   1.1718
+ SON VEL,M/SEC     1778.8   1805.4   1817.1
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.77831  0.79230  0.79810
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)   11.3643   9.6507   8.9802
+ CONDUCTIVITY     22.1483  18.1253  16.4990
+ PRANDTL NUMBER    0.3993   0.4219   0.4344
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    5.2533   5.2759   5.2852
+ CONDUCTIVITY      6.5694   6.6886   6.7377
+ PRANDTL NUMBER    0.6224   0.6250   0.6260
+
+ MASS FRACTIONS
+
+ *H               0.00530  0.00397  0.00342
+ *H2              0.13956  0.14063  0.14107
+ H2O              0.83722  0.84135  0.84320
+ *O               0.00070  0.00041  0.00031
+ *OH              0.01685  0.01342  0.01184
+ *O2              0.00038  0.00022  0.00017
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ HO2             H2O2            O3              H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =   2.834530
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.10843563E+03
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.25873384E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.46202471E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=    2.83453  %FUEL= 26.078818  R,EQ.RATIO= 2.800000  PHI,EQ.RATIO= 2.800000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             2597.55  2651.14  2672.57
+ RHO, KG/CU M    3.5644-2 1.0528-1 1.7439-1
+ H, KJ/KG          901.59   901.59   901.59
+ U, KJ/KG        -1941.10 -1985.77 -2003.46
+ G, KJ/KG        -78208.6 -76661.2 -75802.7
+ S, KJ/(KG)(K)    30.4557  29.2564  28.7006
+
+ M, (1/n)           7.598    7.634    7.649
+ (dLV/dLP)t      -1.00864 -1.00622 -1.00526
+ (dLV/dLT)p        1.1890   1.1336   1.1120
+ Cp, KJ/(KG)(K)   10.1171   8.7281   8.2021
+ GAMMAs            1.1686   1.1822   1.1885
+ SON VEL,M/SEC     1822.6   1847.6   1858.1
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.73598  0.74634  0.75045
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)   10.1171   8.7281   8.2021
+ CONDUCTIVITY     17.9989  14.7297  13.4589
+ PRANDTL NUMBER    0.4137   0.4423   0.4573
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    5.5643   5.5839   5.5916
+ CONDUCTIVITY      6.6252   6.7198   6.7571
+ PRANDTL NUMBER    0.6181   0.6202   0.6210
+
+ MASS FRACTIONS
+
+ *H               0.00395  0.00283  0.00238
+ *H2              0.16431  0.16527  0.16565
+ H2O              0.82194  0.82460  0.82573
+ *O               0.00025  0.00013  0.00010
+ *OH              0.00944  0.00711  0.00611
+ *O2              0.00011  0.00006  0.00004
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ HO2             H2O2            O3              H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =   2.560220
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.11502808E+03
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.27866887E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.44946592E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=    2.56022  %FUEL= 28.088150  R,EQ.RATIO= 3.100000  PHI,EQ.RATIO= 3.100000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             2493.65  2532.55  2547.34
+ RHO, KG/CU M    3.4688-2 1.0282-1 1.7060-1
+ H, KJ/KG          956.40   956.40   956.40
+ U, KJ/KG        -1964.65 -1999.96 -2013.30
+ G, KJ/KG        -78791.0 -76781.6 -75717.5
+ S, KJ/(KG)(K)    31.9802  30.6956  30.0996
+
+ M, (1/n)           7.098    7.123    7.132
+ (dLV/dLP)t      -1.00553 -1.00380 -1.00314
+ (dLV/dLT)p        1.1249   1.0847   1.0696
+ Cp, KJ/(KG)(K)    9.1744   8.0794   7.6796
+ GAMMAs            1.1849   1.1993   1.2056
+ SON VEL,M/SEC     1860.4   1883.0   1892.2
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.69695  0.70433  0.70712
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)    9.1744   8.0794   7.6796
+ CONDUCTIVITY     14.6462  12.1158  11.1737
+ PRANDTL NUMBER    0.4366   0.4697   0.4860
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    5.8489   5.8649   5.8709
+ CONDUCTIVITY      6.6230   6.6946   6.7215
+ PRANDTL NUMBER    0.6155   0.6170   0.6176
+
+ MASS FRACTIONS
+
+ *H               0.00281  0.00192  0.00159
+ *H2              0.18779  0.18858  0.18888
+ H2O              0.80414  0.80578  0.80643
+ *O               0.00009  0.00004  0.00003
+ *OH              0.00515  0.00367  0.00307
+ *O2              0.00003  0.00002  0.00001
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ HO2             H2O2            O3              H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =   2.334318
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.12127163E+03
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.29754883E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.43757181E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=    2.33432  %FUEL= 29.991137  R,EQ.RATIO= 3.400000  PHI,EQ.RATIO= 3.400000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             2392.50  2419.50  2429.27
+ RHO, KG/CU M    3.4000-2 1.0110-1 1.6797-1
+ H, KJ/KG         1008.31  1008.31  1008.31
+ U, KJ/KG        -1971.80 -1998.28 -2007.83
+ G, KJ/KG        -78910.3 -76505.2 -75276.9
+ S, KJ/(KG)(K)    33.4037  32.0370  31.4025
+
+ M, (1/n)           6.675    6.691    6.697
+ (dLV/dLP)t      -1.00346 -1.00228 -1.00185
+ (dLV/dLT)p        1.0811   1.0529   1.0428
+ Cp, KJ/(KG)(K)    8.4845   7.6504   7.3570
+ GAMMAs            1.2021   1.2162   1.2220
+ SON VEL,M/SEC     1892.7   1912.2   1919.8
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.66104  0.66609  0.66791
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)    8.4845   7.6504   7.3570
+ CONDUCTIVITY     12.0649  10.1985   9.5327
+ PRANDTL NUMBER    0.4649   0.4997   0.5155
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    6.1094   6.1219   6.1263
+ CONDUCTIVITY      6.5793   6.6308   6.6494
+ PRANDTL NUMBER    0.6138   0.6150   0.6154
+
+ MASS FRACTIONS
+
+ *H               0.00192  0.00126  0.00102
+ *H2              0.20995  0.21055  0.21077
+ H2O              0.78536  0.78632  0.78668
+ *O               0.00003  0.00001  0.00001
+ *OH              0.00274  0.00185  0.00152
+ *O2              0.00001  0.00000  0.00000
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ HO2             H2O2            O3              H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =   2.145049
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.12719325E+03
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.31545532E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.42629097E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=    2.14505  %FUEL= 31.796003  R,EQ.RATIO= 3.700000  PHI,EQ.RATIO= 3.700000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             2295.23  2313.22  2319.46
+ RHO, KG/CU M    3.3519-2 9.9931-2 1.6619-1
+ H, KJ/KG         1057.55  1057.55  1057.55
+ U, KJ/KG        -1965.37 -1984.31 -1990.86
+ G, KJ/KG        -78669.0 -75949.6 -74599.6
+ S, KJ/(KG)(K)    34.7357  33.2900  32.6184
+
+ M, (1/n)           6.313    6.323    6.326
+ (dLV/dLP)t      -1.00213 -1.00135 -1.00108
+ (dLV/dLT)p        1.0518   1.0326   1.0261
+ Cp, KJ/(KG)(K)    8.0089   7.3954   7.1868
+ GAMMAs            1.2192   1.2319   1.2368
+ SON VEL,M/SEC     1919.8   1935.8   1941.7
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.62810  0.63142  0.63257
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)    8.0089   7.3954   7.1868
+ CONDUCTIVITY     10.1602   8.8423   8.3898
+ PRANDTL NUMBER    0.4951   0.5281   0.5419
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    6.3484   6.3576   6.3608
+ CONDUCTIVITY      6.5067   6.5423   6.5546
+ PRANDTL NUMBER    0.6128   0.6136   0.6139
+
+ MASS FRACTIONS
+
+ *H               0.00128  0.00081  0.00065
+ *H2              0.23084  0.23127  0.23142
+ H2O              0.76645  0.76699  0.76718
+ *O               0.00001  0.00000  0.00000
+ *OH              0.00142  0.00092  0.00074
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ HO2             H2O2            *O2             O3              H2O(cr)        
+ H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =   1.984171
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.13281722E+03
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.33246173E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.41557716E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=    1.98417  %FUEL= 33.510148  R,EQ.RATIO= 4.000000  PHI,EQ.RATIO= 4.000000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             2202.90  2214.50  2218.39
+ RHO, KG/CU M    3.3193-2 9.9156-2 1.6503-1
+ H, KJ/KG         1104.31  1104.31  1104.31
+ U, KJ/KG        -1948.28 -1961.32 -1965.68
+ G, KJ/KG        -78165.3 -75213.4 -73778.9
+ S, KJ/(KG)(K)    35.9843  34.4627  33.7557
+
+ M, (1/n)           6.000    6.006    6.008
+ (dLV/dLP)t      -1.00130 -1.00080 -1.00063
+ (dLV/dLT)p        1.0326   1.0200   1.0158
+ Cp, KJ/(KG)(K)    7.7092   7.2714   7.1266
+ GAMMAs            1.2351   1.2458   1.2496
+ SON VEL,M/SEC     1941.7   1954.2   1958.6
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.59799  0.60011  0.60082
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)    7.7092   7.2714   7.1266
+ CONDUCTIVITY      8.8011   7.9028   7.6040
+ PRANDTL NUMBER    0.5238   0.5522   0.5631
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    6.5682   6.5748   6.5769
+ CONDUCTIVITY      6.4155   6.4392   6.4471
+ PRANDTL NUMBER    0.6122   0.6128   0.6129
+
+ MASS FRACTIONS
+
+ *H               0.00083  0.00051  0.00040
+ *H2              0.25054  0.25084  0.25094
+ H2O              0.74790  0.74819  0.74829
+ *OH              0.00073  0.00046  0.00036
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ HO2             H2O2            *O              *O2             O3             
+ H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =   1.845740
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.13816543E+03
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.34863427E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.40538869E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=    1.84574  %FUEL= 35.140243  R,EQ.RATIO= 4.300000  PHI,EQ.RATIO= 4.300000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             2116.29  2123.61  2126.00
+ RHO, KG/CU M    3.2983-2 9.8668-2 1.6430-1
+ H, KJ/KG         1148.78  1148.78  1148.78
+ U, KJ/KG        -1923.28 -1932.00 -1934.84
+ G, KJ/KG        -77485.2 -74371.7 -72881.3
+ S, KJ/(KG)(K)    37.1566  35.5624  34.8214
+
+ M, (1/n)           5.728    5.731    5.732
+ (dLV/dLP)t      -1.00078 -1.00047 -1.00037
+ (dLV/dLT)p        1.0204   1.0123   1.0096
+ Cp, KJ/(KG)(K)    7.5456   7.2403   7.1416
+ GAMMAs            1.2493   1.2576   1.2605
+ SON VEL,M/SEC     1959.0   1968.4   1971.5
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.57057  0.57190  0.57233
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)    7.5456   7.2403   7.1416
+ CONDUCTIVITY      7.8512   7.2544   7.0605
+ PRANDTL NUMBER    0.5484   0.5708   0.5789
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    6.7713   6.7758   6.7772
+ CONDUCTIVITY      6.3134   6.3288   6.3338
+ PRANDTL NUMBER    0.6119   0.6123   0.6124
+
+ MASS FRACTIONS
+
+ *H               0.00053  0.00032  0.00025
+ *H2              0.26918  0.26938  0.26944
+ H2O              0.72993  0.73008  0.73013
+ *OH              0.00037  0.00023  0.00018
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ HO2             H2O2            *O              *O2             O3             
+ H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =   1.725366
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG        0.35096501E+03      0.22873151E+02      0.14325767E+03
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *H                   0.99212255E+00      0.00000000E+00      0.36403280E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.39568783E-01
+
+ POINT ITN      T            H           O 
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           1.0000000      5882.544    500.000
+ OXIDANT     O2                           1.0000000      6085.501    500.000
+
+ O/F=    1.72537  %FUEL= 36.692322  R,EQ.RATIO= 4.600000  PHI,EQ.RATIO= 4.600000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   3.0397   5.0663
+ T, K             2035.81  2040.36  2041.82
+ RHO, KG/CU M    3.2857-2 9.8388-2 1.6388-1
+ H, KJ/KG         1191.12  1191.12  1191.12
+ U, KJ/KG        -1892.72 -1898.45 -1900.28
+ G, KJ/KG        -76697.3 -73476.9 -71951.1
+ S, KJ/(KG)(K)    38.2593  36.5954  35.8220
+
+ M, (1/n)           5.489    5.491    5.492
+ (dLV/dLP)t      -1.00047 -1.00028 -1.00022
+ (dLV/dLT)p        1.0127   1.0075   1.0059
+ Cp, KJ/(KG)(K)    7.4814   7.2718   7.2051
+ GAMMAs            1.2613   1.2676   1.2697
+ SON VEL,M/SEC     1972.2   1979.0   1981.2
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.54565  0.54647  0.54674
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)    7.4814   7.2718   7.2051
+ CONDUCTIVITY      7.1908   6.8007   6.6761
+ PRANDTL NUMBER    0.5677   0.5843   0.5901
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    6.9596   6.9626   6.9636
+ CONDUCTIVITY      6.2062   6.2160   6.2192
+ PRANDTL NUMBER    0.6119   0.6121   0.6122
+
+ MASS FRACTIONS
+
+ *H               0.00033  0.00020  0.00016
+ *H2              0.28683  0.28697  0.28701
+ H2O              0.71264  0.71272  0.71275
+ *OH              0.00019  0.00011  0.00009
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ HO2             H2O2            *O              *O2             O3             
+ H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+

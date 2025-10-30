@@ -1,0 +1,782 @@
+
+ *******************************************************************************
+
+         NASA-GLENN CHEMICAL EQUILIBRIUM PROGRAM CEA2, FEBRUARY 5, 2004
+                   BY  BONNIE MCBRIDE AND SANFORD GORDON
+      REFS: NASA RP-1311, PART I, 1994 AND NASA RP-1311, PART II, 1996
+
+ *******************************************************************************
+
+
+
+  
+ ### CEA analysis performed on Wed 29-Oct-2025 23:37:07
+  
+ # Problem Type: "Assigned Enthalpy and Pressure"
+  
+ prob case = problem1_______7015 hp
+  
+ # Pressure (2 values):
+ p,atm= 1, 5
+  
+ # Equivalence based on Fuel/Oxid. wt ratio (Eq 9.19*) (5 values):
+ phi = 0.5, 0.8, 1.1, 1.4, 1.7
+  
+ # You selected the following fuels and oxidizers:
+ reac
+ fuel CH4               wt%=100.0000  t,k= 300.000
+ oxid Air               wt%=100.0000  t,k= 300.000
+  
+ # You selected these options for output:
+ # long version of output
+ # Proportions of any products will be expressed as Mass Fractions.
+ output massf
+ # Heat will be expressed as siunits
+ output siunits
+ # Transport properties calculated
+ output transport
+  
+  
+ # Input prepared by this script:/var/www/sites/cearun/cgi-bin/CEARUN/prepareInpu
+ tFile.cgi
+  
+ ### IMPORTANT:  The following line is the end of your CEA input file!
+ end
+
+ OPTIONS: TP=F  HP=T  SP=F  TV=F  UV=F  SV=F  DETN=F  SHOCK=F  REFL=F  INCD=F
+ RKT=F  FROZ=F  EQL=F  IONS=F  SIUNIT=T  DEBUGF=F  SHKDBG=F  DETDBG=F  TRNSPT=T
+
+ TRACE= 0.00E+00  S/R= 0.000000E+00  H/R= 0.000000E+00  U/R= 0.000000E+00
+
+ P,BAR =     1.013250     5.066250
+
+    REACTANT          WT.FRAC   (ENERGY/R),K   TEMP,K  DENSITY
+        EXPLODED FORMULA
+ F: CH4              1.000000  -0.896432E+04   300.00  0.0000
+          C  1.00000  H  4.00000
+ O: Air              1.000000  -0.862210E+01   300.00  0.0000
+          N  1.56168  O  0.41959  AR 0.00937  C  0.00032
+
+  SPECIES BEING CONSIDERED IN THIS SYSTEM
+ (CONDENSED PHASE MAY HAVE NAME LISTED SEVERAL TIMES)
+  LAST thermo.inp UPDATE:    9/09/04
+
+  g 3/98  *Ar              g 7/97  *C               tpis79  *CH            
+  g 4/02  CH2              g 4/02  CH3              g11/00  CH2OH          
+  g 7/00  CH3O             g 8/99  CH4              g 7/00  CH3OH          
+  srd 01  CH3OOH           g 8/99  *CN              g12/99  CNN            
+  tpis79  *CO              g 9/99  *CO2             tpis91  COOH           
+  tpis91  *C2              g 6/01  C2H              g 1/91  C2H2,acetylene 
+  g 5/01  C2H2,vinylidene  g 4/02  CH2CO,ketene     g 3/02  O(CH)2O        
+  srd 01  HO(CO)2OH        g 7/01  C2H3,vinyl       g 9/00  CH3CN          
+  g 6/96  CH3CO,acetyl     g 1/00  C2H4             g 8/88  C2H4O,ethylen-o
+  g 8/88  CH3CHO,ethanal   g 6/00  CH3COOH          srd 01  OHCH2COOH      
+  g 7/00  C2H5             g 7/00  C2H6             g 8/88  CH3N2CH3       
+  g 8/88  C2H5OH           g 7/00  CH3OCH3          srd 01  CH3O2CH3       
+  g 7/00  CCN              tpis91  CNC              srd 01  OCCN           
+  tpis79  C2N2             g 8/00  C2O              tpis79  *C3            
+  n 4/98  C3H3,1-propynl   n 4/98  C3H3,2-propynl   g 2/00  C3H4,allene    
+  g 1/00  C3H4,propyne     g 5/90  C3H4,cyclo-      g 3/01  C3H5,allyl     
+  g 2/00  C3H6,propylene   g 1/00  C3H6,cyclo-      g 6/01  C3H6O,propylox 
+  g 6/97  C3H6O,acetone    g 1/02  C3H6O,propanal   g 7/01  C3H7,n-propyl  
+  g 9/85  C3H7,i-propyl    g 2/00  C3H8             g 2/00  C3H8O,1propanol
+  g 2/00  C3H8O,2propanol  srd 01  CNCOCN           g 7/88  C3O2           
+  g tpis  *C4              g 7/01  C4H2,butadiyne   g 8/00  C4H4,1,3-cyclo-
+  n10/92  C4H6,butadiene   n10/93  C4H6,1butyne     n10/93  C4H6,2butyne   
+  g 8/00  C4H6,cyclo-      n 4/88  C4H8,1-butene    n 4/88  C4H8,cis2-buten
+  n 4/88  C4H8,tr2-butene  n 4/88  C4H8,isobutene   g 8/00  C4H8,cyclo-    
+  g10/00  (CH3COOH)2       n10/84  C4H9,n-butyl     n10/84  C4H9,i-butyl   
+  g 1/93  C4H9,s-butyl     g 1/93  C4H9,t-butyl     g12/00  C4H10,n-butane 
+  g 8/00  C4H10,isobutane  g 6/01  C4N2             g 8/00  *C5            
+  g 5/90  C5H6,1,3cyclo-   g 1/93  C5H8,cyclo-      n 4/87  C5H10,1-pentene
+  g 2/01  C5H10,cyclo-     n10/84  C5H11,pentyl     g 1/93  C5H11,t-pentyl 
+  n10/85  C5H12,n-pentane  n10/85  C5H12,i-pentane  n10/85  CH3C(CH3)2CH3  
+  g 2/93  C6H2             g11/00  C6H5,phenyl      g 8/00  C6H5O,phenoxy  
+  g 8/00  C6H6             g 8/00  C6H5OH,phenol    g 1/93  C6H10,cyclo-   
+  n 4/87  C6H12,1-hexene   g 6/90  C6H12,cyclo-     n10/83  C6H13,n-hexyl  
+  g 6/01  C6H14,n-hexane   g 7/01  C7H7,benzyl      g 1/93  C7H8           
+  g12/00  C7H8O,cresol-mx  n 4/87  C7H14,1-heptene  n10/83  C7H15,n-heptyl 
+  n10/85  C7H16,n-heptane  n10/85  C7H16,2-methylh  n 4/89  C8H8,styrene   
+  n10/86  C8H10,ethylbenz  n 4/87  C8H16,1-octene   n10/83  C8H17,n-octyl  
+  n 4/85  C8H18,n-octane   n 4/85  C8H18,isooctane  n10/83  C9H19,n-nonyl  
+  g 3/01  C10H8,naphthale  n10/83  C10H21,n-decyl   G12/12  C11H21         
+  g 8/00  C12H9,o-bipheny  g 8/00  C12H10,biphenyl  g 6/97  *H             
+  g 6/01  HCN              g 1/01  HCO              tpis89  HCCN           
+  g 6/01  HCCO             g 6/01  HNC              g 7/00  HNCO           
+  g10/01  HNO              tpis89  HNO2             g 5/99  HNO3           
+  g 4/02  HO2              tpis78  *H2              g 5/01  HCHO,formaldehy
+  g 6/01  HCOOH            g 8/89  H2O              g 6/99  H2O2           
+  g 6/01  (HCOOH)2         g 5/97  *N               g 6/01  NCO            
+  g 4/99  *NH              g 3/01  NH2              tpis89  NH3            
+  tpis89  NH2OH            tpis89  *NO              g 4/99  NO2            
+  j12/64  NO3              tpis78  *N2              J12/64  N2O            
+  g 6/01  NCN              g 5/99  N2H2             tpis89  NH2NO2         
+  g 4/99  N2H4             g 4/99  N2O3             tpis89  N2O4           
+  g 4/99  N2O5             tpis89  N3               g 4/99  N3H            
+  g 5/97  *O               g 4/02  *OH              tpis89  *O2            
+  g 8/01  O3               g 12/0  THDCPD,endo      g 12/0  THDCPD,exo     
+  g11/99  N2H4(L)          n 4/83  C(gr)            n 4/83  C(gr)          
+  n 4/83  C(gr)            n12/84  CH3OH(L)         n12/84  C2H5OH(L)      
+  n 4/85  C6H14(L),n-hexa  n12/88  C6H5NH2(L)       n10/86  C6H6(L)        
+  g11/99  H2O(cr)          g 8/01  H2O(L)           g 8/01  H2O(L)         
+
+ SPECIES WITH TRANSPORT PROPERTIES
+
+        PURE SPECIES
+
+  Ar                C                 CH4               CH3OH           
+  CO                CO2             
+  C2H2,acetylene    C2H4              C2H6              C2H5OH          
+  C2N2              H               
+  HCN               H2                H2O               N               
+  NH3               NO              
+  NO2               N2                N2O               N2O4            
+  O                 OH              
+  O2              
+
+     BINARY INTERACTIONS
+
+     C               O               
+     CH4             O2              
+     CO              CO2             
+     CO              N2              
+     CO              O2              
+     CO2             H2              
+     CO2             H2O             
+     CO2             N2              
+     CO2             O2              
+     H               H2              
+     H               N               
+     H               N2              
+     H               O               
+     H2              H2O             
+     H2              N2              
+     H2              O2              
+     H2O             N2              
+     H2O             O2              
+     N               NO              
+     N               N2              
+     N               O               
+     N               O2              
+     NO              O               
+     N2              O               
+     N2              O2              
+     O               O2              
+
+
+ O/F =  34.477044
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -0.55878696E+03     -0.29767190E+00     -0.16039944E+02
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *C                   0.62334580E-01      0.11013248E-04      0.17677426E-02
+  *H                   0.24933832E+00      0.00000000E+00      0.70281593E-02
+  *N                   0.00000000E+00      0.53915890E-01      0.52396150E-01
+  *O                   0.00000000E+00      0.14486046E-01      0.14077724E-01
+  *Ar                  0.00000000E+00      0.32331996E-03      0.31420646E-03
+
+ POINT ITN      T            C           H           N           O 
+                    AR
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        CH4                          1.0000000    -74533.907    300.000
+ OXIDANT     Air                          1.0000000       -71.689    300.000
+
+ O/F=   34.47704  %FUEL=  2.818724  R,EQ.RATIO= 0.500760  PHI,EQ.RATIO= 0.500000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   5.0663
+ T, K             1480.32  1480.41
+ RHO, KG/CU M    2.3315-1 1.1657 0
+ H, KJ/KG         -133.36  -133.36
+ U, KJ/KG         -567.95  -567.97
+ G, KJ/KG        -13363.5 -12664.8
+ S, KJ/(KG)(K)     8.9374   8.4649
+
+ M, (1/n)          28.322   28.322
+ (dLV/dLP)t      -1.00001 -1.00000
+ (dLV/dLT)p        1.0002   1.0001
+ Cp, KJ/(KG)(K)    1.3300   1.3288
+ GAMMAs            1.2834   1.2837
+ SON VEL,M/SEC      746.8    746.9
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.57036  0.57039
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)    1.3300   1.3288
+ CONDUCTIVITY      1.0142   1.0130
+ PRANDTL NUMBER    0.7480   0.7482
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    1.3146   1.3146
+ CONDUCTIVITY      1.0017   1.0018
+ PRANDTL NUMBER    0.7485   0.7485
+
+ MASS FRACTIONS
+
+ *Ar              0.01255  0.01255
+ *CO2             0.07780  0.07780
+ H2O              0.06329  0.06329
+ *NO              0.00078  0.00078
+ NO2              0.00000  0.00001
+ *N2              0.73353  0.73353
+ *OH              0.00004  0.00003
+ *O2              0.11201  0.11201
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ *C              *CH             CH2             CH3             CH2OH          
+ CH3O            CH4             CH3OH           CH3OOH          *CN            
+ CNN             *CO             COOH            *C2             C2H            
+ C2H2,acetylene  C2H2,vinylidene CH2CO,ketene    O(CH)2O         HO(CO)2OH      
+ C2H3,vinyl      CH3CN           CH3CO,acetyl    C2H4            C2H4O,ethylen-o
+ CH3CHO,ethanal  CH3COOH         OHCH2COOH       C2H5            C2H6           
+ CH3N2CH3        C2H5OH          CH3OCH3         CH3O2CH3        CCN            
+ CNC             OCCN            C2N2            C2O             *C3            
+ C3H3,1-propynl  C3H3,2-propynl  C3H4,allene     C3H4,propyne    C3H4,cyclo-    
+ C3H5,allyl      C3H6,propylene  C3H6,cyclo-     C3H6O,propylox  C3H6O,acetone  
+ C3H6O,propanal  C3H7,n-propyl   C3H7,i-propyl   C3H8            C3H8O,1propanol
+ C3H8O,2propanol CNCOCN          C3O2            *C4             C4H2,butadiyne 
+ C4H4,1,3-cyclo- C4H6,butadiene  C4H6,1butyne    C4H6,2butyne    C4H6,cyclo-    
+ C4H8,1-butene   C4H8,cis2-buten C4H8,tr2-butene C4H8,isobutene  C4H8,cyclo-    
+ (CH3COOH)2      C4H9,n-butyl    C4H9,i-butyl    C4H9,s-butyl    C4H9,t-butyl   
+ C4H10,n-butane  C4H10,isobutane C4N2            *C5             C5H6,1,3cyclo- 
+ C5H8,cyclo-     C5H10,1-pentene C5H10,cyclo-    C5H11,pentyl    C5H11,t-pentyl 
+ C5H12,n-pentane C5H12,i-pentane CH3C(CH3)2CH3   C6H2            C6H5,phenyl    
+ C6H5O,phenoxy   C6H6            C6H5OH,phenol   C6H10,cyclo-    C6H12,1-hexene 
+ C6H12,cyclo-    C6H13,n-hexyl   C6H14,n-hexane  C7H7,benzyl     C7H8           
+ C7H8O,cresol-mx C7H14,1-heptene C7H15,n-heptyl  C7H16,n-heptane C7H16,2-methylh
+ C8H8,styrene    C8H10,ethylbenz C8H16,1-octene  C8H17,n-octyl   C8H18,n-octane 
+ C8H18,isooctane C9H19,n-nonyl   C10H8,naphthale C10H21,n-decyl  C11H21         
+ C12H9,o-bipheny C12H10,biphenyl *H              HCN             HCO            
+ HCCN            HCCO            HNC             HNCO            HNO            
+ HNO2            HNO3            HO2             *H2             HCHO,formaldehy
+ HCOOH           H2O2            (HCOOH)2        *N              NCO            
+ *NH             NH2             NH3             NH2OH           NO3            
+ N2O             NCN             N2H2            NH2NO2          N2H4           
+ N2O3            N2O4            N2O5            N3              N3H            
+ *O              O3              THDCPD,endo     THDCPD,exo      N2H4(L)        
+ C(gr)           CH3OH(L)        C2H5OH(L)       C6H14(L),n-hexa C6H5NH2(L)     
+ C6H6(L)         H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =  21.548153
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -0.55878696E+03     -0.29767190E+00     -0.25066410E+02
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *C                   0.62334580E-01      0.11013248E-04      0.27750342E-02
+  *H                   0.24933832E+00      0.00000000E+00      0.11058038E-01
+  *N                   0.00000000E+00      0.53915890E-01      0.51524745E-01
+  *O                   0.00000000E+00      0.14486046E-01      0.13843597E-01
+  *Ar                  0.00000000E+00      0.32331996E-03      0.30898087E-03
+
+ POINT ITN      T            C           H           N           O 
+                    AR
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        CH4                          1.0000000    -74533.907    300.000
+ OXIDANT     Air                          1.0000000       -71.689    300.000
+
+ O/F=   21.54815  %FUEL=  4.434953  R,EQ.RATIO= 0.800304  PHI,EQ.RATIO= 0.800000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   5.0663
+ T, K             1996.62  2001.97
+ RHO, KG/CU M    1.7054-1 8.5074-1
+ H, KJ/KG         -208.41  -208.41
+ U, KJ/KG         -802.56  -803.92
+ G, KJ/KG        -19222.5 -18314.9
+ S, KJ/(KG)(K)     9.5231   9.0443
+
+ M, (1/n)          27.941   27.952
+ (dLV/dLP)t      -1.00034 -1.00018
+ (dLV/dLT)p        1.0117   1.0063
+ Cp, KJ/(KG)(K)    1.5854   1.5326
+ GAMMAs            1.2373   1.2444
+ SON VEL,M/SEC      857.4    860.8
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.70111  0.70243
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)    1.5854   1.5326
+ CONDUCTIVITY      1.5864   1.5067
+ PRANDTL NUMBER    0.7007   0.7145
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    1.4385   1.4390
+ CONDUCTIVITY      1.3843   1.3876
+ PRANDTL NUMBER    0.7286   0.7285
+
+ MASS FRACTIONS
+
+ *Ar              0.01234  0.01234
+ *CO              0.00051  0.00024
+ *CO2             0.12132  0.12175
+ *H2              0.00002  0.00001
+ H2O              0.09887  0.09913
+ *NO              0.00326  0.00331
+ NO2              0.00000  0.00001
+ *N2              0.72017  0.72014
+ *O               0.00007  0.00003
+ *OH              0.00111  0.00076
+ *O2              0.04232  0.04227
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ *C              *CH             CH2             CH3             CH2OH          
+ CH3O            CH4             CH3OH           CH3OOH          *CN            
+ CNN             COOH            *C2             C2H             C2H2,acetylene 
+ C2H2,vinylidene CH2CO,ketene    O(CH)2O         HO(CO)2OH       C2H3,vinyl     
+ CH3CN           CH3CO,acetyl    C2H4            C2H4O,ethylen-o CH3CHO,ethanal 
+ CH3COOH         OHCH2COOH       C2H5            C2H6            CH3N2CH3       
+ C2H5OH          CH3OCH3         CH3O2CH3        CCN             CNC            
+ OCCN            C2N2            C2O             *C3             C3H3,1-propynl 
+ C3H3,2-propynl  C3H4,allene     C3H4,propyne    C3H4,cyclo-     C3H5,allyl     
+ C3H6,propylene  C3H6,cyclo-     C3H6O,propylox  C3H6O,acetone   C3H6O,propanal 
+ C3H7,n-propyl   C3H7,i-propyl   C3H8            C3H8O,1propanol C3H8O,2propanol
+ CNCOCN          C3O2            *C4             C4H2,butadiyne  C4H4,1,3-cyclo-
+ C4H6,butadiene  C4H6,1butyne    C4H6,2butyne    C4H6,cyclo-     C4H8,1-butene  
+ C4H8,cis2-buten C4H8,tr2-butene C4H8,isobutene  C4H8,cyclo-     (CH3COOH)2     
+ C4H9,n-butyl    C4H9,i-butyl    C4H9,s-butyl    C4H9,t-butyl    C4H10,n-butane 
+ C4H10,isobutane C4N2            *C5             C5H6,1,3cyclo-  C5H8,cyclo-    
+ C5H10,1-pentene C5H10,cyclo-    C5H11,pentyl    C5H11,t-pentyl  C5H12,n-pentane
+ C5H12,i-pentane CH3C(CH3)2CH3   C6H2            C6H5,phenyl     C6H5O,phenoxy  
+ C6H6            C6H5OH,phenol   C6H10,cyclo-    C6H12,1-hexene  C6H12,cyclo-   
+ C6H13,n-hexyl   C6H14,n-hexane  C7H7,benzyl     C7H8            C7H8O,cresol-mx
+ C7H14,1-heptene C7H15,n-heptyl  C7H16,n-heptane C7H16,2-methylh C8H8,styrene   
+ C8H10,ethylbenz C8H16,1-octene  C8H17,n-octyl   C8H18,n-octane  C8H18,isooctane
+ C9H19,n-nonyl   C10H8,naphthale C10H21,n-decyl  C11H21          C12H9,o-bipheny
+ C12H10,biphenyl *H              HCN             HCO             HCCN           
+ HCCO            HNC             HNCO            HNO             HNO2           
+ HNO3            HO2             HCHO,formaldehy HCOOH           H2O2           
+ (HCOOH)2        *N              NCO             *NH             NH2            
+ NH3             NH2OH           NO3             N2O             NCN            
+ N2H2            NH2NO2          N2H4            N2O3            N2O4           
+ N2O5            N3              N3H             O3              THDCPD,endo    
+ THDCPD,exo      N2H4(L)         C(gr)           CH3OH(L)        C2H5OH(L)      
+ C6H14(L),n-hexa C6H5NH2(L)      C6H6(L)         H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =  15.671384
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -0.55878696E+03     -0.29767190E+00     -0.33797548E+02
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *C                   0.62334580E-01      0.11013248E-04      0.37493692E-02
+  *H                   0.24933832E+00      0.00000000E+00      0.14956066E-01
+  *N                   0.00000000E+00      0.53915890E-01      0.50681852E-01
+  *O                   0.00000000E+00      0.14486046E-01      0.13617129E-01
+  *Ar                  0.00000000E+00      0.32331996E-03      0.30392625E-03
+
+ POINT ITN      T            C           H           N           O 
+                    AR
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        CH4                          1.0000000    -74533.907    300.000
+ OXIDANT     Air                          1.0000000       -71.689    300.000
+
+ O/F=   15.67138  %FUEL=  5.998302  R,EQ.RATIO= 1.099848  PHI,EQ.RATIO= 1.100000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   5.0663
+ T, K             2210.07  2223.40
+ RHO, KG/CU M    1.4928-1 7.4266-1
+ H, KJ/KG         -281.01  -281.01
+ U, KJ/KG         -959.76  -963.18
+ G, KJ/KG        -22304.3 -21338.7
+ S, KJ/(KG)(K)     9.9650   9.4710
+
+ M, (1/n)          27.073   27.099
+ (dLV/dLP)t      -1.00103 -1.00043
+ (dLV/dLT)p        1.0314   1.0133
+ Cp, KJ/(KG)(K)    1.8233   1.6545
+ GAMMAs            1.2167   1.2345
+ SON VEL,M/SEC      908.8    917.7
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.75099  0.75425
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)    1.8233   1.6545
+ CONDUCTIVITY      2.0922   1.8341
+ PRANDTL NUMBER    0.6545   0.6804
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    1.5210   1.5222
+ CONDUCTIVITY      1.6087   1.6166
+ PRANDTL NUMBER    0.7100   0.7102
+
+ MASS FRACTIONS
+
+ *Ar              0.01214  0.01214
+ *CO              0.02705  0.02644
+ *CO2             0.12250  0.12346
+ *H               0.00002  0.00001
+ *H2              0.00092  0.00089
+ H2O              0.12575  0.12641
+ *NO              0.00054  0.00028
+ *N2              0.70963  0.70975
+ *O               0.00003  0.00001
+ *OH              0.00100  0.00050
+ *O2              0.00040  0.00010
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ *C              *CH             CH2             CH3             CH2OH          
+ CH3O            CH4             CH3OH           CH3OOH          *CN            
+ CNN             COOH            *C2             C2H             C2H2,acetylene 
+ C2H2,vinylidene CH2CO,ketene    O(CH)2O         HO(CO)2OH       C2H3,vinyl     
+ CH3CN           CH3CO,acetyl    C2H4            C2H4O,ethylen-o CH3CHO,ethanal 
+ CH3COOH         OHCH2COOH       C2H5            C2H6            CH3N2CH3       
+ C2H5OH          CH3OCH3         CH3O2CH3        CCN             CNC            
+ OCCN            C2N2            C2O             *C3             C3H3,1-propynl 
+ C3H3,2-propynl  C3H4,allene     C3H4,propyne    C3H4,cyclo-     C3H5,allyl     
+ C3H6,propylene  C3H6,cyclo-     C3H6O,propylox  C3H6O,acetone   C3H6O,propanal 
+ C3H7,n-propyl   C3H7,i-propyl   C3H8            C3H8O,1propanol C3H8O,2propanol
+ CNCOCN          C3O2            *C4             C4H2,butadiyne  C4H4,1,3-cyclo-
+ C4H6,butadiene  C4H6,1butyne    C4H6,2butyne    C4H6,cyclo-     C4H8,1-butene  
+ C4H8,cis2-buten C4H8,tr2-butene C4H8,isobutene  C4H8,cyclo-     (CH3COOH)2     
+ C4H9,n-butyl    C4H9,i-butyl    C4H9,s-butyl    C4H9,t-butyl    C4H10,n-butane 
+ C4H10,isobutane C4N2            *C5             C5H6,1,3cyclo-  C5H8,cyclo-    
+ C5H10,1-pentene C5H10,cyclo-    C5H11,pentyl    C5H11,t-pentyl  C5H12,n-pentane
+ C5H12,i-pentane CH3C(CH3)2CH3   C6H2            C6H5,phenyl     C6H5O,phenoxy  
+ C6H6            C6H5OH,phenol   C6H10,cyclo-    C6H12,1-hexene  C6H12,cyclo-   
+ C6H13,n-hexyl   C6H14,n-hexane  C7H7,benzyl     C7H8            C7H8O,cresol-mx
+ C7H14,1-heptene C7H15,n-heptyl  C7H16,n-heptane C7H16,2-methylh C8H8,styrene   
+ C8H10,ethylbenz C8H16,1-octene  C8H17,n-octyl   C8H18,n-octane  C8H18,isooctane
+ C9H19,n-nonyl   C10H8,naphthale C10H21,n-decyl  C11H21          C12H9,o-bipheny
+ C12H10,biphenyl HCN             HCO             HCCN            HCCO           
+ HNC             HNCO            HNO             HNO2            HNO3           
+ HO2             HCHO,formaldehy HCOOH           H2O2            (HCOOH)2       
+ *N              NCO             *NH             NH2             NH3            
+ NH2OH           NO2             NO3             N2O             NCN            
+ N2H2            NH2NO2          N2H4            N2O3            N2O4           
+ N2O5            N3              N3H             O3              THDCPD,endo    
+ THDCPD,exo      N2H4(L)         C(gr)           CH3OH(L)        C2H5OH(L)      
+ C6H14(L),n-hexa C6H5NH2(L)      C6H6(L)         H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =  12.313230
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -0.55878696E+03     -0.29767190E+00     -0.42247618E+02
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *C                   0.62334580E-01      0.11013248E-04      0.46923390E-02
+  *H                   0.24933832E+00      0.00000000E+00      0.18728612E-01
+  *N                   0.00000000E+00      0.53915890E-01      0.49866092E-01
+  *O                   0.00000000E+00      0.14486046E-01      0.13397952E-01
+  *Ar                  0.00000000E+00      0.32331996E-03      0.29903434E-03
+
+ POINT ITN      T            C           H           N           O 
+                    AR
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        CH4                          1.0000000    -74533.907    300.000
+ OXIDANT     Air                          1.0000000       -71.689    300.000
+
+ O/F=   12.31323  %FUEL=  7.511325  R,EQ.RATIO= 1.399392  PHI,EQ.RATIO= 1.400000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   5.0663
+ T, K             1979.93  1981.49
+ RHO, KG/CU M    1.5662-1 7.8261-1
+ H, KJ/KG         -351.27  -351.27
+ U, KJ/KG         -998.20  -998.62
+ G, KJ/KG        -20734.6 -19708.8
+ S, KJ/(KG)(K)    10.2950   9.7691
+
+ M, (1/n)          25.447   25.450
+ (dLV/dLP)t      -1.00012 -1.00005
+ (dLV/dLT)p        1.0035   1.0016
+ Cp, KJ/(KG)(K)    1.6050   1.5864
+ GAMMAs            1.2577   1.2603
+ SON VEL,M/SEC      902.0    903.2
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.68780  0.68817
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)    1.6050   1.5864
+ CONDUCTIVITY      1.7012   1.6368
+ PRANDTL NUMBER    0.6489   0.6670
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    1.5560   1.5561
+ CONDUCTIVITY      1.5665   1.5673
+ PRANDTL NUMBER    0.6832   0.6833
+
+ MASS FRACTIONS
+
+ *Ar              0.01195  0.01195
+ *CO              0.08097  0.08100
+ *CO2             0.07929  0.07923
+ *H               0.00001  0.00001
+ *H2              0.00495  0.00495
+ H2O              0.12429  0.12436
+ *NO              0.00001  0.00001
+ *N2              0.69845  0.69846
+ *OH              0.00007  0.00003
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ *C              *CH             CH2             CH3             CH2OH          
+ CH3O            CH4             CH3OH           CH3OOH          *CN            
+ CNN             COOH            *C2             C2H             C2H2,acetylene 
+ C2H2,vinylidene CH2CO,ketene    O(CH)2O         HO(CO)2OH       C2H3,vinyl     
+ CH3CN           CH3CO,acetyl    C2H4            C2H4O,ethylen-o CH3CHO,ethanal 
+ CH3COOH         OHCH2COOH       C2H5            C2H6            CH3N2CH3       
+ C2H5OH          CH3OCH3         CH3O2CH3        CCN             CNC            
+ OCCN            C2N2            C2O             *C3             C3H3,1-propynl 
+ C3H3,2-propynl  C3H4,allene     C3H4,propyne    C3H4,cyclo-     C3H5,allyl     
+ C3H6,propylene  C3H6,cyclo-     C3H6O,propylox  C3H6O,acetone   C3H6O,propanal 
+ C3H7,n-propyl   C3H7,i-propyl   C3H8            C3H8O,1propanol C3H8O,2propanol
+ CNCOCN          C3O2            *C4             C4H2,butadiyne  C4H4,1,3-cyclo-
+ C4H6,butadiene  C4H6,1butyne    C4H6,2butyne    C4H6,cyclo-     C4H8,1-butene  
+ C4H8,cis2-buten C4H8,tr2-butene C4H8,isobutene  C4H8,cyclo-     (CH3COOH)2     
+ C4H9,n-butyl    C4H9,i-butyl    C4H9,s-butyl    C4H9,t-butyl    C4H10,n-butane 
+ C4H10,isobutane C4N2            *C5             C5H6,1,3cyclo-  C5H8,cyclo-    
+ C5H10,1-pentene C5H10,cyclo-    C5H11,pentyl    C5H11,t-pentyl  C5H12,n-pentane
+ C5H12,i-pentane CH3C(CH3)2CH3   C6H2            C6H5,phenyl     C6H5O,phenoxy  
+ C6H6            C6H5OH,phenol   C6H10,cyclo-    C6H12,1-hexene  C6H12,cyclo-   
+ C6H13,n-hexyl   C6H14,n-hexane  C7H7,benzyl     C7H8            C7H8O,cresol-mx
+ C7H14,1-heptene C7H15,n-heptyl  C7H16,n-heptane C7H16,2-methylh C8H8,styrene   
+ C8H10,ethylbenz C8H16,1-octene  C8H17,n-octyl   C8H18,n-octane  C8H18,isooctane
+ C9H19,n-nonyl   C10H8,naphthale C10H21,n-decyl  C11H21          C12H9,o-bipheny
+ C12H10,biphenyl HCN             HCO             HCCN            HCCO           
+ HNC             HNCO            HNO             HNO2            HNO3           
+ HO2             HCHO,formaldehy HCOOH           H2O2            (HCOOH)2       
+ *N              NCO             *NH             NH2             NH3            
+ NH2OH           NO2             NO3             N2O             NCN            
+ N2H2            NH2NO2          N2H4            N2O3            N2O4           
+ N2O5            N3              N3H             *O              *O2            
+ O3              THDCPD,endo     THDCPD,exo      N2H4(L)         C(gr)          
+ CH3OH(L)        C2H5OH(L)       C6H14(L),n-hexa C6H5NH2(L)      C6H6(L)        
+ H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
+
+
+
+ O/F =  10.140307
+
+                       EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
+ ENTHALPY                  h(2)/R              h(1)/R               h0/R
+ (KG-MOL)(K)/KG       -0.55878696E+03     -0.29767190E+00     -0.50429978E+02
+
+ KG-FORM.WT./KG             bi(2)               bi(1)               b0i
+  *C                   0.62334580E-01      0.11013248E-04      0.56054341E-02
+  *H                   0.24933832E+00      0.00000000E+00      0.22381638E-01
+  *N                   0.00000000E+00      0.53915890E-01      0.49076177E-01
+  *O                   0.00000000E+00      0.14486046E-01      0.13185719E-01
+  *Ar                  0.00000000E+00      0.32331996E-03      0.29429742E-03
+
+ POINT ITN      T            C           H           N           O 
+                    AR
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE = problem1_______
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        CH4                          1.0000000    -74533.907    300.000
+ OXIDANT     Air                          1.0000000       -71.689    300.000
+
+ O/F=   10.14031  %FUEL=  8.976413  R,EQ.RATIO= 1.698936  PHI,EQ.RATIO= 1.700000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            1.0132   5.0663
+ T, K             1762.32  1762.65
+ RHO, KG/CU M    1.6610-1 8.3040-1
+ H, KJ/KG         -419.30  -419.30
+ U, KJ/KG        -1029.31 -1029.40
+ G, KJ/KG        -19036.4 -18057.9
+ S, KJ/(KG)(K)    10.5640  10.0069
+
+ M, (1/n)          24.021   24.022
+ (dLV/dLP)t      -1.00003 -1.00002
+ (dLV/dLT)p        1.0008   1.0004
+ Cp, KJ/(KG)(K)    1.6190   1.6145
+ GAMMAs            1.2724   1.2731
+ SON VEL,M/SEC      881.0    881.3
+
+ TRANSPORT PROPERTIES (GASES ONLY)
+   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
+
+ VISC,MILLIPOISE  0.62817  0.62825
+
+  WITH EQUILIBRIUM REACTIONS
+
+ Cp, KJ/(KG)(K)    1.6191   1.6145
+ CONDUCTIVITY      1.5824   1.5646
+ PRANDTL NUMBER    0.6427   0.6483
+
+  WITH FROZEN REACTIONS
+
+ Cp, KJ/(KG)(K)    1.5872   1.5872
+ CONDUCTIVITY      1.5298   1.5300
+ PRANDTL NUMBER    0.6517   0.6518
+
+ MASS FRACTIONS
+
+ *Ar              0.01176  0.01176
+ *CO              0.11758  0.11759
+ *CO2             0.06196  0.06194
+ *H2              0.01011  0.01011
+ H2O              0.11119  0.11120
+ *N2              0.68739  0.68739
+ *OH              0.00001  0.00000
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MASS FRACTIONS
+    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
+
+ *C              *CH             CH2             CH3             CH2OH          
+ CH3O            CH4             CH3OH           CH3OOH          *CN            
+ CNN             COOH            *C2             C2H             C2H2,acetylene 
+ C2H2,vinylidene CH2CO,ketene    O(CH)2O         HO(CO)2OH       C2H3,vinyl     
+ CH3CN           CH3CO,acetyl    C2H4            C2H4O,ethylen-o CH3CHO,ethanal 
+ CH3COOH         OHCH2COOH       C2H5            C2H6            CH3N2CH3       
+ C2H5OH          CH3OCH3         CH3O2CH3        CCN             CNC            
+ OCCN            C2N2            C2O             *C3             C3H3,1-propynl 
+ C3H3,2-propynl  C3H4,allene     C3H4,propyne    C3H4,cyclo-     C3H5,allyl     
+ C3H6,propylene  C3H6,cyclo-     C3H6O,propylox  C3H6O,acetone   C3H6O,propanal 
+ C3H7,n-propyl   C3H7,i-propyl   C3H8            C3H8O,1propanol C3H8O,2propanol
+ CNCOCN          C3O2            *C4             C4H2,butadiyne  C4H4,1,3-cyclo-
+ C4H6,butadiene  C4H6,1butyne    C4H6,2butyne    C4H6,cyclo-     C4H8,1-butene  
+ C4H8,cis2-buten C4H8,tr2-butene C4H8,isobutene  C4H8,cyclo-     (CH3COOH)2     
+ C4H9,n-butyl    C4H9,i-butyl    C4H9,s-butyl    C4H9,t-butyl    C4H10,n-butane 
+ C4H10,isobutane C4N2            *C5             C5H6,1,3cyclo-  C5H8,cyclo-    
+ C5H10,1-pentene C5H10,cyclo-    C5H11,pentyl    C5H11,t-pentyl  C5H12,n-pentane
+ C5H12,i-pentane CH3C(CH3)2CH3   C6H2            C6H5,phenyl     C6H5O,phenoxy  
+ C6H6            C6H5OH,phenol   C6H10,cyclo-    C6H12,1-hexene  C6H12,cyclo-   
+ C6H13,n-hexyl   C6H14,n-hexane  C7H7,benzyl     C7H8            C7H8O,cresol-mx
+ C7H14,1-heptene C7H15,n-heptyl  C7H16,n-heptane C7H16,2-methylh C8H8,styrene   
+ C8H10,ethylbenz C8H16,1-octene  C8H17,n-octyl   C8H18,n-octane  C8H18,isooctane
+ C9H19,n-nonyl   C10H8,naphthale C10H21,n-decyl  C11H21          C12H9,o-bipheny
+ C12H10,biphenyl *H              HCN             HCO             HCCN           
+ HCCO            HNC             HNCO            HNO             HNO2           
+ HNO3            HO2             HCHO,formaldehy HCOOH           H2O2           
+ (HCOOH)2        *N              NCO             *NH             NH2            
+ NH3             NH2OH           *NO             NO2             NO3            
+ N2O             NCN             N2H2            NH2NO2          N2H4           
+ N2O3            N2O4            N2O5            N3              N3H            
+ *O              *O2             O3              THDCPD,endo     THDCPD,exo     
+ N2H4(L)         C(gr)           CH3OH(L)        C2H5OH(L)       C6H14(L),n-hexa
+ C6H5NH2(L)      C6H6(L)         H2O(cr)         H2O(L)         
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+
