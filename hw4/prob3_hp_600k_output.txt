@@ -10,11 +10,11 @@
 
 
   
- ### CEA analysis performed on Wed 29-Oct-2025 23:40:49
+ ### CEA analysis performed on Sat 01-Nov-2025 03:25:23
   
  # Problem Type: "Assigned Enthalpy and Pressure"
   
- prob case = problem1_______7015 hp
+ prob case = _______________1968 hp
   
  # Pressure (2 values):
  p,atm= 1, 5
@@ -187,7 +187,7 @@
 
                                    PRESSURES
 
- CASE = problem1_______
+ CASE = _______________
 
              REACTANT                    WT FRACTION      ENERGY      TEMP
                                           (SEE NOTE)     KJ/KG-MOL      K  
@@ -312,7 +312,7 @@
 
                                    PRESSURES
 
- CASE = problem1_______
+ CASE = _______________
 
              REACTANT                    WT FRACTION      ENERGY      TEMP
                                           (SEE NOTE)     KJ/KG-MOL      K  
@@ -438,7 +438,7 @@
 
                                    PRESSURES
 
- CASE = problem1_______
+ CASE = _______________
 
              REACTANT                    WT FRACTION      ENERGY      TEMP
                                           (SEE NOTE)     KJ/KG-MOL      K  
@@ -563,7 +563,7 @@
 
                                    PRESSURES
 
- CASE = problem1_______
+ CASE = _______________
 
              REACTANT                    WT FRACTION      ENERGY      TEMP
                                           (SEE NOTE)     KJ/KG-MOL      K  
@@ -688,7 +688,7 @@
 
                                    PRESSURES
 
- CASE = problem1_______
+ CASE = _______________
 
              REACTANT                    WT FRACTION      ENERGY      TEMP
                                           (SEE NOTE)     KJ/KG-MOL      K  
