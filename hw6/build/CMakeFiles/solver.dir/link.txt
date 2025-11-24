@@ -1,0 +1,1 @@
+/opt/intel/oneapi/compiler/2025.1/bin/ifx -O3 -g -traceback CMakeFiles/solver.dir/mod_global.f90.o CMakeFiles/solver.dir/mod_linalg.f90.o CMakeFiles/solver.dir/mod_chem.f90.o CMakeFiles/solver.dir/main.f90.o -o solver 

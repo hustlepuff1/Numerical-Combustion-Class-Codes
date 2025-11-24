@@ -1,0 +1,3 @@
+/home/h/numSolver/hw6/build/CMakeFiles/solver.dir
+/home/h/numSolver/hw6/build/CMakeFiles/edit_cache.dir
+/home/h/numSolver/hw6/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,5 @@
+# The fortran modules provided by this target.
+provides
+ mod_chem.mod
+ mod_global.mod
+ mod_linalg.mod
