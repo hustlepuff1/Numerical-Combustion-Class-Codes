@@ -14,11 +14,6 @@ module mod_global
     real(dp), parameter :: A1 = 4.4e10_dp         ! 1/s
     real(dp), parameter :: A2 = 4.0e10_dp         ! 1/s
     real(dp), parameter :: A3 = 3.0e10_dp         ! cm^3/s-g (Wait! check units)
-    ! Note on A3: 30 cm^3/s-g = 30 * (1e-6 m^3) / s / (1e-3 kg) = 0.03 m^3/kg-s
-    ! However, based on the rate law r3 = A3 * exp * rho * Yc, 
-    ! standard Arrhenius units for 1st order are 1/s. 
-    ! If r3 is mass-based, we'll assume the provided value is scaled for the equation provided.
-    ! Let's treat the inputs as consistent with the equations in the PDF.
 
     ! Activation Energies (Given in KJ/mole, converting to J/mole)
     real(dp), parameter :: E1 = 190000.0_dp
