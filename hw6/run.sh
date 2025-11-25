@@ -27,6 +27,7 @@ make -j4
 # 4. Run Solver
 # We pipe "2" into the solver to auto-select 'Implicit Scheme'
 # Change "2" to "1" if you want to run Explicit.
+#echo "[Run] Running Explicit Solver..."
 echo "[Run] Running Implicit Solver..."
 echo "2" | ./solver
 

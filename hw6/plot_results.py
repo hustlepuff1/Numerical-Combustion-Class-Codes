@@ -39,28 +39,28 @@ def plot_simulation():
         print("\n[ERROR] Not enough valid data points to plot.")
         return
 
-    # 4. Plotting - UPDATED to 2 Subplots
-    # nrows=2, ncols=1, sharex=True links the time axis
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 10), sharex=True)
+    # ==========================================
+    # FIGURE 1: LINEAR SCALE (Temp + Species)
+    # ==========================================
+    print("[Plot] Generating Linear Scale Plot...")
+    fig1, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 10), sharex=True)
 
-    # --- Plot 1: Temperature ---
+    # --- Plot 1.1: Temperature ---
     if 'Temp' in df.columns:
         color = 'tab:red'
         ax1.plot(df['Time'], df['Temp'], color=color, linewidth=2, label='Temperature')
         ax1.set_ylabel('Temperature (K)', fontsize=12, fontweight='bold')
         ax1.grid(True, linestyle='--', alpha=0.7)
         ax1.legend(loc='best')
-        ax1.set_title('Combustion Simulation Results', fontsize=14)
+        ax1.set_title('Combustion Results (Linear Scale)', fontsize=14)
     else:
         ax1.text(0.5, 0.5, "Temperature Data Missing", ha='center')
 
-    # --- Plot 2: Species ---
+    # --- Plot 1.2: Species ---
     species_cols = [col for col in df.columns if col.startswith('Y_')]
     
     if species_cols:
-        # Loop through species columns (e.g., Y_A, Y_B, Y_fuel)
         for i, species in enumerate(species_cols):
-            # Cycle through different line styles and colors automatically
             ax2.plot(df['Time'], df[species], linewidth=2, label=species)
             
         ax2.set_ylabel('Mass Fraction', fontsize=12, fontweight='bold')
@@ -70,12 +70,34 @@ def plot_simulation():
     else:
         ax2.text(0.5, 0.5, "Species Data Missing", ha='center')
 
-    # Adjust layout to prevent overlap
     plt.tight_layout()
-    
-    save_name = 'results_plot.png'
-    plt.savefig(save_name, dpi=300)
-    print(f"[Plot] Graph saved to {save_name}")
+    plt.savefig('results_plot.png', dpi=300)
+    print(f"   -> Saved to results_plot.png")
+    plt.close(fig1) # Close to free memory
+
+    # ==========================================
+    # FIGURE 2: LOG TIME SCALE (Species Only)
+    # ==========================================
+    if species_cols:
+        print("[Plot] Generating Log-Time Scale Plot...")
+        fig2, ax3 = plt.subplots(figsize=(10, 6))
+        
+        for i, species in enumerate(species_cols):
+            ax3.plot(df['Time'], df[species], linewidth=2, label=species)
+            
+        # LOG MAGIC: Set X-axis to Log Scale to see induction period
+        ax3.set_xscale('log') 
+        
+        ax3.set_ylabel('Mass Fraction', fontsize=12, fontweight='bold')
+        ax3.set_xlabel('Time (s) - Log Scale', fontsize=12, fontweight='bold')
+        ax3.set_title('Species Mass Fraction (Log Time Scale)', fontsize=14)
+        ax3.grid(True, which="both", linestyle='--', alpha=0.5)
+        ax3.legend(loc='best')
+        
+        plt.tight_layout()
+        plt.savefig('results_plot_log.png', dpi=300)
+        print(f"   -> Saved to results_plot_log.png")
+        plt.close(fig2)
 
 if __name__ == "__main__":
     plot_simulation()
