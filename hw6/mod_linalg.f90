@@ -8,8 +8,8 @@ contains
     ! N is 5 for this problem
     subroutine solve_linear_system(N, A, b, x)
         integer, intent(in) :: N
-        real(dp), dimension(N,N), intent(inout) :: A ! Will be modified
-        real(dp), dimension(N), intent(inout) :: b   ! Will be modified
+        real(dp), dimension(N,N), intent(inout) :: A 
+        real(dp), dimension(N), intent(inout) :: b
         real(dp), dimension(N), intent(out) :: x
         
         integer :: i, j, k, max_row

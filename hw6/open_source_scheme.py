@@ -9,9 +9,9 @@ R_univ = 8.314        # J/(mol K)
 rho0   = 200.0        # kg/m^3
 
 # Pre-exponential Factors (1/s)
-A1 = 4.4e10
-A2 = 4.0e10
-A3 = 3.0e10
+A1 = np.exp(44.0)
+A2 = np.exp(40.0)
+A3 = np.exp(30.0)
 
 # Activation Energies (J/mol)
 E1 = 190000.0
@@ -70,7 +70,7 @@ def run_and_plot():
     
     # Initial Conditions & Time
     y0 = [1.0, 0.0, 0.0, 0.0, 1500.0]
-    t_span = (0.0, 0.3e-4) # 30 microseconds
+    t_span = (0.0, 0.3e-9) # 10 nanoseconds
     
     # Solve using BDF (Implicit)
     sol = solve_ivp(combustion_ode, t_span, y0, method='BDF', rtol=1e-6, atol=1e-10)

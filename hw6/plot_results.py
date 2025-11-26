@@ -27,12 +27,9 @@ def plot_simulation():
             print(f"Error: 'Time' column not found. Found: {df.columns.tolist()}")
             sys.exit(1)
 
-    # 3. Check for Divergence (NaNs)
+    # 3. Check for Divergence
     if df.isnull().values.any():
-        print("\n[WARNING] NaNs detected in the data! The simulation likely diverged.")
-        nan_rows = df[df.isna().any(axis=1)]
-        first_fail_time = nan_rows['Time'].iloc[0] if not nan_rows.empty else 'Unknown'
-        print(f"Simulation failed at Time = {first_fail_time}")
+        print("\n[WARNING] NaNs detected in the data!")
         df = df.dropna()
 
     if len(df) < 2:
@@ -40,12 +37,12 @@ def plot_simulation():
         return
 
     # ==========================================
-    # FIGURE 1: LINEAR SCALE (Temp + Species)
+    # FIGURE 1: LINEAR SCALE
     # ==========================================
-    print("[Plot] Generating Linear Scale Plot...")
+    print("[Plot] Generating Linear Plots...")
     fig1, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 10), sharex=True)
 
-    # --- Plot 1.1: Temperature ---
+    # Temperature
     if 'Temp' in df.columns:
         color = 'tab:red'
         ax1.plot(df['Time'], df['Temp'], color=color, linewidth=2, label='Temperature')
@@ -53,39 +50,32 @@ def plot_simulation():
         ax1.grid(True, linestyle='--', alpha=0.7)
         ax1.legend(loc='best')
         ax1.set_title('Combustion Results (Linear Scale)', fontsize=14)
-    else:
-        ax1.text(0.5, 0.5, "Temperature Data Missing", ha='center')
 
-    # --- Plot 1.2: Species ---
+    # Species
     species_cols = [col for col in df.columns if col.startswith('Y_')]
-    
     if species_cols:
-        for i, species in enumerate(species_cols):
+        for species in species_cols:
             ax2.plot(df['Time'], df[species], linewidth=2, label=species)
-            
         ax2.set_ylabel('Mass Fraction', fontsize=12, fontweight='bold')
         ax2.set_xlabel('Time (s)', fontsize=12, fontweight='bold')
         ax2.grid(True, linestyle='--', alpha=0.7)
-        ax2.legend(loc='best')
-    else:
-        ax2.text(0.5, 0.5, "Species Data Missing", ha='center')
+        ax2.legend(loc='center right')
 
     plt.tight_layout()
     plt.savefig('results_plot.png', dpi=300)
-    print(f"   -> Saved to results_plot.png")
-    plt.close(fig1) # Close to free memory
+    plt.close(fig1)
 
     # ==========================================
-    # FIGURE 2: LOG TIME SCALE (Species Only)
+    # FIGURE 2: LOG SCALE (As requested)
     # ==========================================
     if species_cols:
         print("[Plot] Generating Log-Time Scale Plot...")
         fig2, ax3 = plt.subplots(figsize=(10, 6))
         
-        for i, species in enumerate(species_cols):
+        for species in species_cols:
             ax3.plot(df['Time'], df[species], linewidth=2, label=species)
             
-        # LOG MAGIC: Set X-axis to Log Scale to see induction period
+        # LOG MAGIC HERE
         ax3.set_xscale('log') 
         
         ax3.set_ylabel('Mass Fraction', fontsize=12, fontweight='bold')
@@ -96,8 +86,8 @@ def plot_simulation():
         
         plt.tight_layout()
         plt.savefig('results_plot_log.png', dpi=300)
-        print(f"   -> Saved to results_plot_log.png")
         plt.close(fig2)
+        print(f"[Plot] Saved 'results_plot.png' and 'results_plot_log.png'")
 
 if __name__ == "__main__":
     plot_simulation()

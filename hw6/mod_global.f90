@@ -9,21 +9,22 @@ module mod_global
     real(dp), parameter :: rho0 = 200.0_dp      ! kg/m^3
     real(dp), parameter :: R_univ = 8.314_dp    ! J/(mol K)
 
-    ! --- Reaction Parameters (3 Steps) ---
-    ! Pre-exponential Factors (A)
-    real(dp), parameter :: A1 = 4.4e10_dp         ! 1/s
-    real(dp), parameter :: A2 = 4.0e10_dp         ! 1/s
-    real(dp), parameter :: A3 = 3.0e10_dp         ! cm^3/s-g (Wait! check units)
+    ! --- Reaction Parameters (High-Speed Case) ---
+    ! Pre-exponential Factors (A) in 1/s
+    ! Calculated from np.exp(44), np.exp(40), np.exp(30)
+    real(dp), parameter :: A1 = 1.285160011435937e19_dp  
+    real(dp), parameter :: A2 = 2.353852668370200e17_dp  
+    real(dp), parameter :: A3 = 1.068647458152446e13_dp  
 
-    ! Activation Energies (Given in KJ/mole, converting to J/mole)
+    ! Activation Energies (J/mole)
     real(dp), parameter :: E1 = 190000.0_dp
     real(dp), parameter :: E2 = 180000.0_dp
     real(dp), parameter :: E3 = 140000.0_dp
 
-    ! Heat of Reaction (J/g -> Convert to J/kg by * 1000)
-    real(dp), parameter :: dH1 = 270000.0_dp    ! 270 J/g = 270,000 J/kg
-    real(dp), parameter :: dH2 = -800000.0_dp   ! -800 J/g
-    real(dp), parameter :: dH3 = -4000000.0_dp  ! -4000 J/g
+    ! Heat of Reaction (J/kg)
+    real(dp), parameter :: dH1 = 270000.0_dp
+    real(dp), parameter :: dH2 = -800000.0_dp
+    real(dp), parameter :: dH3 = -4000000.0_dp
 
     ! Specific Heats (J/kg K)
     real(dp), parameter :: Cv_A = 1200.0_dp
