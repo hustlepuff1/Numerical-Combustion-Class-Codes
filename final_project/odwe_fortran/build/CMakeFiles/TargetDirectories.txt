@@ -1,0 +1,3 @@
+/home/h/numSolver/final_project/odwe_fortran/build/CMakeFiles/odwe.dir
+/home/h/numSolver/final_project/odwe_fortran/build/CMakeFiles/edit_cache.dir
+/home/h/numSolver/final_project/odwe_fortran/build/CMakeFiles/rebuild_cache.dir
