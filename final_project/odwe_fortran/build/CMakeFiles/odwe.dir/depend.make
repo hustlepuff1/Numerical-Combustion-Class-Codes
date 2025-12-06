@@ -34,6 +34,8 @@ CMakeFiles/odwe.dir/main.f90.o: CMakeFiles/odwe.dir/grid_mod.mod.stamp
 CMakeFiles/odwe.dir/main.f90.o: CMakeFiles/odwe.dir/post_mod.mod.stamp
 CMakeFiles/odwe.dir/main.f90.o: CMakeFiles/odwe.dir/solver_mod.mod.stamp
 CMakeFiles/odwe.dir/main.f90.o: CMakeFiles/odwe.dir/state_mod.mod.stamp
+CMakeFiles/odwe.dir/post.f90.o: CMakeFiles/odwe.dir/chemistry_mod.mod.stamp
+CMakeFiles/odwe.dir/post.f90.o: CMakeFiles/odwe.dir/state_mod.mod.stamp
 CMakeFiles/odwe.dir/post.f90.o.provides.build: CMakeFiles/odwe.dir/post_mod.mod.stamp
 CMakeFiles/odwe.dir/post_mod.mod.stamp: CMakeFiles/odwe.dir/post.f90.o
 	$(CMAKE_COMMAND) -E cmake_copy_f90_mod post_mod.mod CMakeFiles/odwe.dir/post_mod.mod.stamp IntelLLVM

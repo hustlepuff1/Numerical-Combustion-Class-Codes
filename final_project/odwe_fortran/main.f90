@@ -1,23 +1,73 @@
 program odwe_main
   use grid_mod
-  use state_mod
+  use state_mod          ! now also for allocate_state / deallocate_state
   use solver_mod
   use post_mod
   use chemistry_mod
   implicit none
 
-  integer, parameter :: ni = 241, nj = 81
-  real(8), parameter :: gamma = 1.4d0, Rgas = 287.d0
-  real(8) :: x(ni), y(nj), dx, dy, wall_theta(ni)
-  real(8) :: U(NVAR, ni, nj)
+  integer :: ni, nj
+  real(8) :: gamma, Rgas
+  real(8), allocatable :: x(:), y(:), wall_theta(:)
+
+  real(8), allocatable :: U(:,:,:)   ! NVAR x ni x nj
+
+  real(8) :: x_left, x_right, y_bottom, y_top
+  real(8) :: x_ramp, theta_deg
   real(8) :: rho_inf, u_inf, v_inf, p_inf
   real(8) :: inflow_state(NVAR)
   real(8) :: t, t_end, dt, CFL
+  real(8) :: dx, dy
   integer :: it, isnap
+  integer :: chem_flag
+  logical :: use_chemistry
+
+  integer :: ios
+  character(len=*), parameter :: input_name = "odwe_input.dat"
+
+  ! ---- read input file ----
+  ios = 0
+  open(10, file=input_name, status="old", action="read", iostat=ios)
+  if (ios /= 0) then
+     ! Try parent directory (for when we run from build/)
+     close(10)
+     open(10, file="../"//input_name, status="old", action="read", iostat=ios)
+     if (ios /= 0) then
+        write(*,*) "ERROR: could not open ", trim(input_name), &
+                   " in '.' or '../'."
+        stop
+     end if
+  end if
+
+  read(10,*)         ! skip comment
+  read(10,*) ni, nj
+  read(10,*)         ! skip comment
+  read(10,*) x_left, x_right, y_bottom, y_top
+  read(10,*)         ! skip comment
+  read(10,*) x_ramp, theta_deg
+  read(10,*)         ! skip comment
+  read(10,*) gamma, Rgas
+  read(10,*)         ! skip comment
+  read(10,*) rho_inf, u_inf, v_inf
+  read(10,*)         ! skip comment
+  read(10,*) p_inf
+  read(10,*)         ! skip comment
+  read(10,*) t_end, CFL
+  read(10,*)         ! skip comment
+  read(10,*) chem_flag
+
+  close(10)
+
+  use_chemistry = (chem_flag /= 0)
+
+
+  ! === allocate flow + species fields ===
+  allocate(x(ni), y(nj), wall_theta(ni))
+  call allocate_state(U, ni, nj)
 
   ! 1) grid & wedge
-  call make_wedge_grid(ni, nj, 0.d0, 1.d0, 0.d0, 0.2d0, x, y, dx, dy, &
-                       wall_theta, 0.3d0, 15.d0)
+  call make_wedge_grid(ni, nj, x_left, x_right, y_bottom, y_top, x, y, dx, dy, &
+                       wall_theta, x_ramp, theta_deg)
 
   ! 2) inflow conditions
   rho_inf = 1.d5 / (Rgas * 800.d0)
@@ -30,11 +80,11 @@ program odwe_main
   call init_uniform(U, ni, nj, inflow_state)
 
   ! 3b) initialize chemistry field (H2/air mixture)
-  call init_chemistry(ni, nj)
+  if (use_chemistry) then
+    call init_chemistry(ni, nj)
+  end if
 
   t      = 0.d0
-  t_end  = 1.d-4
-  CFL    = 0.4d0
   it     = 0
   isnap  = 0
 
@@ -44,7 +94,7 @@ program odwe_main
      if (t + dt > t_end) dt = t_end - t
 
      call tvd_rk3_step_2d(U, ni, nj, dt, dx, dy, gamma, Rgas, inflow_state, &
-                          wall_theta)
+                          wall_theta, use_chemistry)
 
      t  = t + dt
      it = it + 1
@@ -60,6 +110,9 @@ program odwe_main
      end if
 
   end do
+
+  ! clean up
+  call deallocate_state(U)
 
 contains
 
@@ -80,16 +133,19 @@ contains
     real(8), intent(in) :: U(NVAR,ni,nj)
     integer, intent(in) :: ni, nj
     real(8), intent(in) :: gamma, Rgas
+
     integer :: i_sample, j_sample
-    real(8) :: rho, u, v, p, T
+    real(8) :: rho, uvel, vvel, p, T
 
+    ! pick a sample cell near the wall
     i_sample = ni/2
-    j_sample = 2   ! near the wall
+    j_sample = 2
 
-    call cons_to_prim(U(:,i_sample,j_sample), gamma, rho, u, v, p)
+    call cons_to_prim(U(:,i_sample,j_sample), gamma, rho, uvel, vvel, p)
     T = temperature_from_primitive(rho, p, Rgas)
+
     write(*,'("sample cell: rho=",ES12.4," u=",ES12.4," p=",ES12.4," T=",ES12.4)') &
-          rho, u, p, T
+         rho, uvel, p, T
   end subroutine print_sample_cell
 
 end program odwe_main

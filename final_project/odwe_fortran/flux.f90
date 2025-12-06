@@ -1,5 +1,5 @@
 module flux_mod
-  use state_mod, only: NVAR, prim_to_cons, cons_to_prim, get_species, set_species
+  use state_mod, only: NVAR, prim_to_cons, cons_to_prim, sound_speed
   implicit none
   private
   public :: euler_flux_x, euler_flux_y
@@ -144,6 +144,13 @@ contains
     real(8) :: UL(4), UR(4), Ughost(4)
     real(8) :: rho, u, v, p, theta, ut, un
     integer :: i, j
+
+      !----------------------------------------
+      ! Prevent "unused variable" remark (#7712)
+      !----------------------------------------
+      if (.false.) then
+        print *, "Rgas = ", Rgas
+      end if
 
     !-------------------------
     ! x-direction interfaces
