@@ -16,6 +16,7 @@ CMakeFiles/odwe.dir/chemistry_mod.mod.stamp: CMakeFiles/odwe.dir/chemistry.f90.o
 CMakeFiles/odwe.dir/chemistry.f90.o.provides.build:
 	$(CMAKE_COMMAND) -E touch CMakeFiles/odwe.dir/chemistry.f90.o.provides.build
 CMakeFiles/odwe.dir/build: CMakeFiles/odwe.dir/chemistry.f90.o.provides.build
+CMakeFiles/odwe.dir/flux.f90.o: CMakeFiles/odwe.dir/bc_mod.mod.stamp
 CMakeFiles/odwe.dir/flux.f90.o: CMakeFiles/odwe.dir/state_mod.mod.stamp
 CMakeFiles/odwe.dir/flux.f90.o.provides.build: CMakeFiles/odwe.dir/flux_mod.mod.stamp
 CMakeFiles/odwe.dir/flux_mod.mod.stamp: CMakeFiles/odwe.dir/flux.f90.o

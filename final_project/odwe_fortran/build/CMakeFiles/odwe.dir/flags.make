@@ -6,5 +6,5 @@ Fortran_DEFINES =
 
 Fortran_INCLUDES = 
 
-Fortran_FLAGS = -O3 -warn -traceback
+Fortran_FLAGS = -fiopenmp -O3 -warn -traceback -fiopenmp
 

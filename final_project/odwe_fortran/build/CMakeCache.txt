@@ -187,6 +187,15 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Fortran compiler flags for OpenMP parallelization
+OpenMP_Fortran_FLAGS:STRING=-fiopenmp
+
+//Fortran compiler libraries for OpenMP parallelization
+OpenMP_Fortran_LIB_NAMES:STRING=iomp5
+
+//Path to the iomp5 library for OpenMP
+OpenMP_iomp5_LIBRARY:FILEPATH=/opt/intel/oneapi/compiler/2025.1/lib/libiomp5.so
+
 //Value Computed by CMake
 odwe_fortran_BINARY_DIR:STATIC=/home/h/numSolver/final_project/odwe_fortran/build
 
@@ -330,6 +339,24 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding OpenMP
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[TRUE][c ][v5.2()]
+//Details about finding OpenMP_Fortran
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_Fortran:INTERNAL=[-fiopenmp][/opt/intel/oneapi/compiler/2025.1/lib/libiomp5.so][v5.2()]
+//Result of TRY_COMPILE
+OpenMP_COMPILE_RESULT_FortranHeader_fiopenmp:INTERNAL=TRUE
+//Result of TRY_COMPILE
+OpenMP_COMPILE_RESULT_FortranModule_fiopenmp:INTERNAL=TRUE
+//ADVANCED property for variable: OpenMP_Fortran_FLAGS
+OpenMP_Fortran_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenMP_Fortran_LIB_NAMES
+OpenMP_Fortran_LIB_NAMES-ADVANCED:INTERNAL=1
+//Fortran compiler's OpenMP specification date
+OpenMP_Fortran_SPEC_DATE:INTERNAL=202111
+//Result of TRY_COMPILE
+OpenMP_SPECTEST_Fortran_:INTERNAL=TRUE
+//ADVANCED property for variable: OpenMP_iomp5_LIBRARY
+OpenMP_iomp5_LIBRARY-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 

@@ -196,6 +196,7 @@ odwe: CMakeFiles/odwe.dir/bc.f90.o
 odwe: CMakeFiles/odwe.dir/chemistry.f90.o
 odwe: CMakeFiles/odwe.dir/post.f90.o
 odwe: CMakeFiles/odwe.dir/build.make
+odwe: /opt/intel/oneapi/compiler/2025.1/lib/libiomp5.so
 odwe: CMakeFiles/odwe.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/h/numSolver/final_project/odwe_fortran/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking Fortran executable odwe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/odwe.dir/link.txt --verbose=$(VERBOSE)

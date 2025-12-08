@@ -39,7 +39,7 @@ contains
     if (wavespeed > 0.d0) then
       dt = CFL / wavespeed
     else
-      dt = 1.d30   ! fallback, should not happen
+      dt = 1.d30   ! fallback
     end if
   end function compute_dt_cfl_2d
 
@@ -55,11 +55,17 @@ contains
     real(8), intent(in)    :: wall_theta(ni)
     logical, intent(in)    :: use_chemistry
 
-    real(8) :: U1(NVAR, ni, nj)
-    real(8) :: U2(NVAR, ni, nj)
-    real(8) :: R1(NVAR, ni, nj)
-    real(8) :: R2(NVAR, ni, nj)
-    real(8) :: R3(NVAR, ni, nj)
+    ! --- 1. Declare as ALLOCATABLE arrays (Dynamic Memory) ---
+    ! Note: Do NOT specify size here (e.g. ni, nj). Use (:,:,:)
+    real(8), allocatable :: U1(:,:,:)
+    real(8), allocatable :: U2(:,:,:)
+    real(8), allocatable :: R1(:,:,:)
+    real(8), allocatable :: R2(:,:,:)
+    real(8), allocatable :: R3(:,:,:)
+
+    ! --- 2. Allocate memory explicitly (Heap Memory) ---
+    allocate(U1(NVAR, ni, nj), U2(NVAR, ni, nj))
+    allocate(R1(NVAR, ni, nj), R2(NVAR, ni, nj), R3(NVAR, ni, nj))
 
     ! --- Stage 1 ---
     call residual_2d_odwe(Ufield, ni, nj, dx, dy, gamma, Rgas, &
@@ -80,6 +86,9 @@ contains
     if (use_chemistry) then
       call update_chemistry(Ufield, ni, nj, gamma, Rgas, dt)
     end if
+
+    ! --- 3. Deallocate memory to prevent leaks ---
+    deallocate(U1, U2, R1, R2, R3)
 
   end subroutine tvd_rk3_step_2d
 
