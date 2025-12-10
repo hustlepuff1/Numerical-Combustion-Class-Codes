@@ -1,5 +1,4 @@
 module chemistry_mod
-  ! Import the new NASA getters
   use state_mod, only: NVAR, NSPEC, Wspec, R_univ, Yspec, cons_to_prim, &
                        get_species_H_RT, get_species_S_R
   implicit none
@@ -9,8 +8,9 @@ module chemistry_mod
   public :: update_chemistry
   public :: Yspec
 
-  real(8), parameter :: DeltaH_H2 = 2.418d8
-  real(8) :: dt_chem_limit = 1.0d-9 
+  ! Lower Heating Value of H2 ~120 MJ/kg
+  real(8), parameter :: DeltaH_H2 = 1.1996d8 
+  real(8) :: dt_chem_limit = 1.0d-10
 
 contains
 
@@ -18,6 +18,7 @@ contains
     integer, intent(in) :: ni, nj
     real(8), intent(in) :: chem_dt_in
     integer :: i, j
+
     real(8), parameter :: Y_H2_0 = 0.028d0
     real(8), parameter :: Y_O2_0 = 0.225d0
     real(8), parameter :: Y_N2_0 = 0.747d0
@@ -46,13 +47,13 @@ contains
     real(8) :: Yloc(NSPEC), C(NSPEC), w(NSPEC)
     real(8) :: Rmix_loc, E_internal
     real(8) :: dt_remain, dt_sub
-    real(8), parameter :: T_cutoff = 500.0d0
+    real(8), parameter :: T_cutoff = 300.0d0
 
     if (.not. allocated(Yspec)) return
 
     !$omp parallel do private(i, j, k, rho, rhoE, KE, Yloc, Rmix_loc, E_internal, T, p, dt_remain, dt_sub, C, w)
-    do j = 2, nj-1
-      do i = 2, ni-1
+    do j = 1, nj
+      do i = 1, ni
         
         rho = U(1, i, j)
         if (rho <= 1.0d-9) cycle
@@ -62,6 +63,7 @@ contains
         p = (gamma - 1.d0) * (rhoE - KE)
         T = p / (rho * Rgas_ref)
 
+        ! Optimization: Skip chemistry if gas is cold
         if (T < T_cutoff) then
              do k = 1, NSPEC
                 Yspec(k, i, j) = U(4+k, i, j) / rho
@@ -79,15 +81,9 @@ contains
         do while (dt_remain > 1.d-14)
             dt_sub = min(dt_remain, dt_chem_limit)
             
-            ! Calculate T accurately with local R_mix
-            Rmix_loc = 0.d0
-            do k = 1, NSPEC
-               Rmix_loc = Rmix_loc + (Yloc(k) / Wspec(k))
-            end do
-            Rmix_loc = Rmix_loc * R_univ
-            
+            ! Approximate T for rate calculation
             E_internal = (rhoE - KE) / rho
-            T = (gamma - 1.d0) * E_internal / Rmix_loc
+            T = (gamma - 1.d0) * E_internal / Rgas_ref
             if (T < 300.d0) T = 300.d0
             
             call massfrac_to_conc(rho, Yloc, C)
@@ -127,7 +123,6 @@ contains
     real(8) :: k40, k4inf, M, Pr, Fc, c_par, n_par, d_par, F
     real(8) :: denom, logPr
     
-    ! --- NEW: Variables for Gibbs Calculation ---
     real(8) :: h_rt, s_r
     real(8) :: G_spec(NSPEC)
     real(8) :: dG1, dG2, dG3
@@ -135,85 +130,35 @@ contains
 
     H2=C(1); O2=C(2); O=C(3); H=C(4); H2O=C(5); HO2=C(6); OH=C(7); N2=C(8)
 
-    ! -----------------------------------------------------------------
-    ! 1. Calculate Gibbs Free Energy G(T) for each species
-    !    G(T) = H(T) - T*S(T)
-    ! -----------------------------------------------------------------
+    ! Gibbs Calculation
     do k = 1, NSPEC
-       h_rt = get_species_H_RT(k, T) ! Dimensionless
-       s_r  = get_species_S_R(k, T)  ! Dimensionless
-       
-       ! G = (H/RT)*RT - T*(S/R)*R = R_univ * T * (H/RT - S/R) [J/mol]
+       h_rt = get_species_H_RT(k, T)
+       s_r  = get_species_S_R(k, T)
        G_spec(k) = R_univ * T * (h_rt - s_r)
     end do
 
-    ! -----------------------------------------------------------------
-    ! 2. Calculate Delta G for the 3 reversible reactions
-    ! -----------------------------------------------------------------
-    ! Rxn 1: H + O2 <=> OH + O
     dG1 = (G_spec(7) + G_spec(3)) - (G_spec(4) + G_spec(2))
-    
-    ! Rxn 2: H2 + O <=> OH + H
     dG2 = (G_spec(7) + G_spec(4)) - (G_spec(1) + G_spec(3))
-    
-    ! Rxn 3: H2 + OH <=> H2O + H
     dG3 = (G_spec(5) + G_spec(4)) - (G_spec(1) + G_spec(7))
 
-    ! -------------------------------------------------------------------------
-    ! UNITS: Converted from CGS (cm^3/mol/s) to SI (m^3/mol/s)
-    ! Factor 2-body: 1.0d-6
-    ! Factor 3-body: 1.0d-12
-    ! -------------------------------------------------------------------------
+    ! === CRITICAL FIX: MAGNITUDES RESTORED TO C++ LEVELS (10^13) ===
+    k1f = 3.52d13 * T**(-0.7d0) * exp(-8590.d0 / T)   
+    k2f = 5.06d1  * T**( 2.67d0) * exp(-3166.d0 / T)  
+    k3f = 1.17d6  * T**( 1.3d0)  * exp(-1829.d0 / T)  
+    
+    k40 = 5.75d16 * T**(-1.4d0)   
+    k4inf = 4.65d9 * T**( 0.44d0) 
+    
+    k5f = 7.08d10 * exp(-148.d0 / T) 
+    k6f = 1.66d10 * exp(-414.d0 / T)
+    k7f = 2.89d10 * exp( 250.d0 / T)
 
-    ! Rxn 1: H + O2 <=> OH + O (2-body)
-    ! Original: 3.52d13 -> New: 3.52d7
-    k1f = 3.52d7  * T**(-0.7d0) * exp(-8590.d0 / T)
-
-    ! Rxn 2: H2 + O <=> OH + H (2-body)
-    ! Original: 5.06d4 -> New: 5.06d-2 (Wait, check original exponent carefully!)
-    ! If original was 5.06E+04, new is 5.06E-02. 
-    ! If original was 5.06E+01, new is 5.06E-05.
-    ! LET'S ASSUME STANDARD MECHANISM VALUES:
-    ! H2+O is typically ~5E4 (CGS). So use 5.06d-2.
-    k2f = 5.06d-2 * T**( 2.67d0) * exp(-3166.d0 / T)
-
-    ! Rxn 3: H2 + OH <=> H2O + H (2-body)
-    ! Original: 1.17d6 -> New: 1.17d0
-    k3f = 1.17d0  * T**( 1.3d0)  * exp(-1829.d0 / T)
-
-    ! Rxn 4: H + O2 + M <=> HO2 + M (3-body)
-    ! Original: 5.75d13 -> New: 5.75d1 (SI) 
-    ! Note: This depends on if it is low-pressure limit (3-body) or high-pressure.
-    ! k40 is the low-pressure limit (3-body behavior). Convert by 1.d-12.
-    k40 = 5.75d1  * T**(-1.4d0) 
-
-    ! k4inf is the high-pressure limit (2-body behavior). Convert by 1.d-6.
-    k4inf = 4.65d3 * T**( 0.44d0)
-
-    ! Rxn 5: HO2 + H <=> H2 + O2 (2-body)
-    ! Original: 7.08d10 -> New: 7.08d4
-    k5f = 7.08d4  * exp(-148.d0 / T)
-
-    ! Rxn 6: HO2 + H <=> 2OH (2-body)
-    ! Original: 1.66d10 -> New: 1.66d4
-    k6f = 1.66d4  * exp(-414.d0 / T)
-
-    ! Rxn 7: HO2 + OH <=> H2O + O2 (2-body)
-    ! Original: 2.89d10 -> New: 2.89d4
-    k7f = 2.89d4  * exp( 250.d0 / T)
-
-    ! -----------------------------------------------------------------
-    ! 4. Backward Rates (Equilibrium: k_r = k_f / Kp)
-    !    Kp = exp(-DeltaG / RT). So k_r = k_f * exp(DeltaG / RT)
-    ! -----------------------------------------------------------------
     k1r = k1f * exp( dG1 / (R_univ * T) )
     k2r = k2f * exp( dG2 / (R_univ * T) )
     k3r = k3f * exp( dG3 / (R_univ * T) )
 
-    ! Third-body efficiency
     M = 2.5d0*H2 + 16.d0*H2O + O2 + O + H + HO2 + OH + N2
 
-    ! Fall-off for Rxn 4
     if (max(k4inf, 1.d-30) < 1.d-29) then
        Pr=0.d0
     else
@@ -230,7 +175,6 @@ contains
     end if
     k4f = k4inf*Pr/(1.d0+Pr)*F
 
-    ! Production Rates w(k) [mol/(m^3 s)]
     w(1) = -k2f*H2*O + k2r*OH*H -k3f*H2*OH + k3r*H2O*H +k6f*HO2*H
     w(2) = -k1f*H*O2 + k1r*OH*O -k4f*H*O2*M +k6f*HO2*H + k7f*HO2*OH
     w(3) = k1f*H*O2 - k1r*OH*O -k2f*H2*O + k2r*OH*H
@@ -247,14 +191,19 @@ contains
     real(8), intent(in) :: w(NSPEC)
     integer :: k
     real(8) :: omega_mass, sumY, qdot
+    
     do k = 1, NSPEC
+      ! Fix: Convert molar rate (kmol/m3/s) to mass rate (kg/m3/s)
       omega_mass = w(k) * Wspec(k)
       Y(k) = max(0.d0, min(1.d0, Y(k) + (omega_mass/rho)*dt))
     end do
     sumY = sum(Y)
     if(sumY>1.d-30) Y=Y/sumY
-    qdot = -DeltaH_H2 * w(1)
+
+    ! --- BUG FIX: Multiply by Molecular Weight of H2 (Wspec(1)) ---
+    qdot = -DeltaH_H2 * w(1) * Wspec(1) 
     rhoE = rhoE + qdot * dt
+    
   end subroutine apply_sources
 
 end module chemistry_mod

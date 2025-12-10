@@ -1,0 +1,1 @@
+/opt/intel/oneapi/compiler/2025.1/bin/ifx  -O3 -g -qopenmp CMakeFiles/nasa_solver.dir/constants_mod.f90.o CMakeFiles/nasa_solver.dir/thermo_mod.f90.o CMakeFiles/nasa_solver.dir/reaction_mod.f90.o CMakeFiles/nasa_solver.dir/flux_mod.f90.o CMakeFiles/nasa_solver.dir/solver_mod.f90.o CMakeFiles/nasa_solver.dir/main.f90.o -o /home/h/numSolver/nasa_shocktube/nasa_solver 

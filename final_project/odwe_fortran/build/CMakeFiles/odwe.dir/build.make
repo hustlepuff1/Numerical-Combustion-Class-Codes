@@ -72,106 +72,106 @@ include CMakeFiles/odwe.dir/flags.make
 CMakeFiles/odwe.dir/main.f90.o: CMakeFiles/odwe.dir/flags.make
 CMakeFiles/odwe.dir/main.f90.o: /home/h/numSolver/final_project/odwe_fortran/main.f90
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/h/numSolver/final_project/odwe_fortran/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building Fortran object CMakeFiles/odwe.dir/main.f90.o"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/main.f90 -o CMakeFiles/odwe.dir/main.f90.o
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/main.f90 -o CMakeFiles/odwe.dir/main.f90.o
 
 CMakeFiles/odwe.dir/main.f90.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/odwe.dir/main.f90.i"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/main.f90 > CMakeFiles/odwe.dir/main.f90.i
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/main.f90 > CMakeFiles/odwe.dir/main.f90.i
 
 CMakeFiles/odwe.dir/main.f90.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/odwe.dir/main.f90.s"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/main.f90 -o CMakeFiles/odwe.dir/main.f90.s
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/main.f90 -o CMakeFiles/odwe.dir/main.f90.s
 
 CMakeFiles/odwe.dir/grid.f90.o: CMakeFiles/odwe.dir/flags.make
 CMakeFiles/odwe.dir/grid.f90.o: /home/h/numSolver/final_project/odwe_fortran/grid.f90
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/h/numSolver/final_project/odwe_fortran/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building Fortran object CMakeFiles/odwe.dir/grid.f90.o"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/grid.f90 -o CMakeFiles/odwe.dir/grid.f90.o
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/grid.f90 -o CMakeFiles/odwe.dir/grid.f90.o
 
 CMakeFiles/odwe.dir/grid.f90.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/odwe.dir/grid.f90.i"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/grid.f90 > CMakeFiles/odwe.dir/grid.f90.i
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/grid.f90 > CMakeFiles/odwe.dir/grid.f90.i
 
 CMakeFiles/odwe.dir/grid.f90.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/odwe.dir/grid.f90.s"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/grid.f90 -o CMakeFiles/odwe.dir/grid.f90.s
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/grid.f90 -o CMakeFiles/odwe.dir/grid.f90.s
 
 CMakeFiles/odwe.dir/state.f90.o: CMakeFiles/odwe.dir/flags.make
 CMakeFiles/odwe.dir/state.f90.o: /home/h/numSolver/final_project/odwe_fortran/state.f90
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/h/numSolver/final_project/odwe_fortran/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building Fortran object CMakeFiles/odwe.dir/state.f90.o"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/state.f90 -o CMakeFiles/odwe.dir/state.f90.o
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/state.f90 -o CMakeFiles/odwe.dir/state.f90.o
 
 CMakeFiles/odwe.dir/state.f90.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/odwe.dir/state.f90.i"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/state.f90 > CMakeFiles/odwe.dir/state.f90.i
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/state.f90 > CMakeFiles/odwe.dir/state.f90.i
 
 CMakeFiles/odwe.dir/state.f90.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/odwe.dir/state.f90.s"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/state.f90 -o CMakeFiles/odwe.dir/state.f90.s
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/state.f90 -o CMakeFiles/odwe.dir/state.f90.s
 
 CMakeFiles/odwe.dir/flux.f90.o: CMakeFiles/odwe.dir/flags.make
 CMakeFiles/odwe.dir/flux.f90.o: /home/h/numSolver/final_project/odwe_fortran/flux.f90
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/h/numSolver/final_project/odwe_fortran/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building Fortran object CMakeFiles/odwe.dir/flux.f90.o"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/flux.f90 -o CMakeFiles/odwe.dir/flux.f90.o
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/flux.f90 -o CMakeFiles/odwe.dir/flux.f90.o
 
 CMakeFiles/odwe.dir/flux.f90.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/odwe.dir/flux.f90.i"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/flux.f90 > CMakeFiles/odwe.dir/flux.f90.i
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/flux.f90 > CMakeFiles/odwe.dir/flux.f90.i
 
 CMakeFiles/odwe.dir/flux.f90.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/odwe.dir/flux.f90.s"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/flux.f90 -o CMakeFiles/odwe.dir/flux.f90.s
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/flux.f90 -o CMakeFiles/odwe.dir/flux.f90.s
 
 CMakeFiles/odwe.dir/solver.f90.o: CMakeFiles/odwe.dir/flags.make
 CMakeFiles/odwe.dir/solver.f90.o: /home/h/numSolver/final_project/odwe_fortran/solver.f90
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/h/numSolver/final_project/odwe_fortran/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building Fortran object CMakeFiles/odwe.dir/solver.f90.o"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/solver.f90 -o CMakeFiles/odwe.dir/solver.f90.o
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/solver.f90 -o CMakeFiles/odwe.dir/solver.f90.o
 
 CMakeFiles/odwe.dir/solver.f90.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/odwe.dir/solver.f90.i"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/solver.f90 > CMakeFiles/odwe.dir/solver.f90.i
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/solver.f90 > CMakeFiles/odwe.dir/solver.f90.i
 
 CMakeFiles/odwe.dir/solver.f90.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/odwe.dir/solver.f90.s"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/solver.f90 -o CMakeFiles/odwe.dir/solver.f90.s
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/solver.f90 -o CMakeFiles/odwe.dir/solver.f90.s
 
 CMakeFiles/odwe.dir/bc.f90.o: CMakeFiles/odwe.dir/flags.make
 CMakeFiles/odwe.dir/bc.f90.o: /home/h/numSolver/final_project/odwe_fortran/bc.f90
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/h/numSolver/final_project/odwe_fortran/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building Fortran object CMakeFiles/odwe.dir/bc.f90.o"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/bc.f90 -o CMakeFiles/odwe.dir/bc.f90.o
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/bc.f90 -o CMakeFiles/odwe.dir/bc.f90.o
 
 CMakeFiles/odwe.dir/bc.f90.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/odwe.dir/bc.f90.i"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/bc.f90 > CMakeFiles/odwe.dir/bc.f90.i
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/bc.f90 > CMakeFiles/odwe.dir/bc.f90.i
 
 CMakeFiles/odwe.dir/bc.f90.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/odwe.dir/bc.f90.s"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/bc.f90 -o CMakeFiles/odwe.dir/bc.f90.s
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/bc.f90 -o CMakeFiles/odwe.dir/bc.f90.s
 
 CMakeFiles/odwe.dir/chemistry.f90.o: CMakeFiles/odwe.dir/flags.make
 CMakeFiles/odwe.dir/chemistry.f90.o: /home/h/numSolver/final_project/odwe_fortran/chemistry.f90
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/h/numSolver/final_project/odwe_fortran/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building Fortran object CMakeFiles/odwe.dir/chemistry.f90.o"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/chemistry.f90 -o CMakeFiles/odwe.dir/chemistry.f90.o
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/chemistry.f90 -o CMakeFiles/odwe.dir/chemistry.f90.o
 
 CMakeFiles/odwe.dir/chemistry.f90.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/odwe.dir/chemistry.f90.i"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/chemistry.f90 > CMakeFiles/odwe.dir/chemistry.f90.i
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/chemistry.f90 > CMakeFiles/odwe.dir/chemistry.f90.i
 
 CMakeFiles/odwe.dir/chemistry.f90.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/odwe.dir/chemistry.f90.s"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/chemistry.f90 -o CMakeFiles/odwe.dir/chemistry.f90.s
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/chemistry.f90 -o CMakeFiles/odwe.dir/chemistry.f90.s
 
 CMakeFiles/odwe.dir/post.f90.o: CMakeFiles/odwe.dir/flags.make
 CMakeFiles/odwe.dir/post.f90.o: /home/h/numSolver/final_project/odwe_fortran/post.f90
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/h/numSolver/final_project/odwe_fortran/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building Fortran object CMakeFiles/odwe.dir/post.f90.o"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/post.f90 -o CMakeFiles/odwe.dir/post.f90.o
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/h/numSolver/final_project/odwe_fortran/post.f90 -o CMakeFiles/odwe.dir/post.f90.o
 
 CMakeFiles/odwe.dir/post.f90.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/odwe.dir/post.f90.i"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/post.f90 > CMakeFiles/odwe.dir/post.f90.i
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/h/numSolver/final_project/odwe_fortran/post.f90 > CMakeFiles/odwe.dir/post.f90.i
 
 CMakeFiles/odwe.dir/post.f90.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/odwe.dir/post.f90.s"
-	ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/post.f90 -o CMakeFiles/odwe.dir/post.f90.s
+	/opt/intel/oneapi/compiler/2025.1/bin/ifx $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/h/numSolver/final_project/odwe_fortran/post.f90 -o CMakeFiles/odwe.dir/post.f90.s
 
 # Object files for target odwe
 odwe_OBJECTS = \

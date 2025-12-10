@@ -1,0 +1,7 @@
+# The fortran modules provided by this target.
+provides
+ constants_mod.mod
+ flux_mod.mod
+ reaction_mod.mod
+ solver_mod.mod
+ thermo_mod.mod

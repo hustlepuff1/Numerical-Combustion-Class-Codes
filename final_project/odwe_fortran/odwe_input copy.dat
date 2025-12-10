@@ -1,0 +1,20 @@
+# grid size: ni nj
+201 81
+# domain bounds: x_left x_right y_bottom y_top
+0.0 0.15 0.0 0.04
+# ramp: x_ramp theta_deg
+0.2 15.0
+# gas constants: gamma Rgas
+1.4 287.0
+# inflow: rho_inf u_inf v_inf
+0.32 2300.0 0.0
+# inflow pressure: p_inf
+101325.0
+# time and CFL: t_end CFL
+2.0e-4 0.2
+# chemistry flag (0 = off, 1 = on)
+1
+# chemical sub-step: max_chem_dt
+1.0e-9
+# output frequency: isnap_freq
+100

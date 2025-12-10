@@ -1,11 +1,13 @@
 cmake_minimum_required(VERSION 3.16)
 
+# 1. Set compiler BEFORE project() if you want to force it, 
+#    but better to let CMake detect what is available.
+#    (We comment this out to allow auto-detection on ws104)
+# set(CMAKE_Fortran_COMPILER ifx)
+
 project(odwe_fortran LANGUAGES Fortran)
 
-# Use Intel oneAPI ifx
-set(CMAKE_Fortran_COMPILER ifx)
-
-# --- NEW: Enable OpenMP ---
+# 2. Find OpenMP (works for both Intel and GNU)
 find_package(OpenMP REQUIRED)
 
 set(SRC
@@ -21,10 +23,19 @@ set(SRC
 
 add_executable(odwe ${SRC})
 
-# Link OpenMP to the target
+# 3. Link OpenMP
 target_link_libraries(odwe PRIVATE OpenMP::OpenMP_Fortran)
 
-# Flags: Add -O3 (Optimization) and Traceback
-# OpenMP flags are handled automatically by target_link_libraries usually,
-# but we add them explicitly to compile options just in case.
-target_compile_options(odwe PRIVATE ${OpenMP_Fortran_FLAGS} -O3 -warn -traceback)
+# 4. Apply flags based on the Detected Compiler
+if(CMAKE_Fortran_COMPILER_ID MATCHES "Intel" OR CMAKE_Fortran_COMPILER_ID MATCHES "IntelLLVM")
+    # Intel Flags (ifx / ifort)
+    message(STATUS "Configuring for Intel Compiler...")
+    target_compile_options(odwe PRIVATE -O3 -warn -traceback)
+elseif(CMAKE_Fortran_COMPILER_ID MATCHES "GNU")
+    # GNU Flags (gfortran)
+    message(STATUS "Configuring for GNU gfortran...")
+    target_compile_options(odwe PRIVATE -O3 -Wall -fbacktrace -ffree-line-length-none)
+else()
+    # Fallback
+    target_compile_options(odwe PRIVATE -O3)
+endif()
