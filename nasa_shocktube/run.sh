@@ -35,6 +35,8 @@ mv history.dat results_fortran/ 2>/dev/null || true
 # --- 5. Run Visualization ---
 echo " "
 echo ">>> Plotting Results..."
-python3 plot_results.py
+
+# Plot Fortran results(We can select which frame to plot by changing the number)
+python3 plot_results.py 9
 
 echo "DONE."

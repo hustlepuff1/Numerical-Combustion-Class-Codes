@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import glob
 import os
+import sys
 import matplotlib.animation as animation
 from pathlib import Path
 
@@ -30,7 +31,7 @@ def load_dat(filepath):
     except Exception as e:
         return None
 
-# --- 1. Contour Plotter (Static images retain colorbars) ---
+# --- 1. Contour Plotter ---
 def plot_contour(data, var_name, title, filename, cmap='jet'):
     if var_name not in VAR_MAP: return
     idx = VAR_MAP[var_name]
@@ -111,7 +112,9 @@ def plot_centerline_validation(data, filename):
 # --- 4. Convergence History ---
 def plot_convergence():
     hist_file = DATA_DIR / 'history.dat'
-    if not hist_file.exists(): return
+    if not hist_file.exists(): 
+        print("Warning: history.dat not found.")
+        return
 
     try:
         try: hist = np.loadtxt(hist_file, skiprows=1, delimiter=',')
@@ -128,9 +131,10 @@ def plot_convergence():
         plt.savefig(OUTPUT_DIR / 'fig2_convergence.png', dpi=200)
         plt.close()
         print("Generated: fig2_convergence.png")
-    except: pass
+    except Exception as e:
+        print(f"Failed to plot convergence: {e}")
 
-# --- 5. Movie Maker (NO COLORBAR) ---
+# --- 5. Movie Maker (No Colorbar, Fixed Limits) ---
 def get_global_limits(file_list, var_name):
     idx = VAR_MAP[var_name]
     g_min, g_max = 1e20, -1e20
@@ -155,13 +159,11 @@ def make_movie_fixed(file_list, var_name, filename, cmap='jet'):
     fig, ax = plt.subplots(figsize=(10, 3))
     idx = VAR_MAP[var_name]
     
-    # Initial Plot
+    # Plot without colorbar
     X = data0[:, :, 0]
     Y = data0[:, :, 1]
     Z = data0[:, :, idx]
-    
-    # Note: No colorbar call here
-    cf = ax.contourf(X, Y, Z, levels=50, cmap=cmap, vmin=vmin, vmax=vmax)
+    ax.contourf(X, Y, Z, levels=50, cmap=cmap, vmin=vmin, vmax=vmax)
     ax.set_aspect('equal')
     ax.set_xlabel("x (m)")
     ax.set_ylabel("y (m)")
@@ -186,13 +188,31 @@ if not files:
     print("No data found.")
     exit()
 
-last_frame = files[-1]
-data = load_dat(last_frame)
+# --- A. STATIC PLOTS (Selectable Frame) ---
+target_file = files[-1] # Default: Last Frame
+if len(sys.argv) > 1:
+    arg = sys.argv[1]
+    # Check if integer index
+    try:
+        idx = int(arg)
+        potential = DATA_DIR / f"flow_{idx:03d}.dat"
+        if potential.exists():
+            target_file = str(potential)
+        else:
+            print(f"Warning: Frame {idx} not found. Using last frame.")
+    except ValueError:
+        # Check if direct filename
+        potential = DATA_DIR / arg
+        if potential.exists():
+            target_file = str(potential)
+        else:
+            print(f"Warning: File {arg} not found. Using last frame.")
+
+print(f"--- Plotting Static Validation (Frame: {os.path.basename(str(target_file))}) ---")
+data = load_dat(target_file)
 
 if data is not None:
-    print("--- Generating NASA Validation Plots ---")
-    
-    # 1. Contours (Figs 9-17)
+    # [cite_start]1. Contours (Figs 9-17) [cite: 651, 661, 667, 677, 683, 693, 699, 709, 716]
     plot_contour(data, 'Mach', 'Mach Number (Fig 9)', 'fig9_mach.png')
     plot_contour(data, 'P', 'Static Pressure (Fig 10)', 'fig10_pressure.png')
     plot_contour(data, 'T', 'Static Temperature (Fig 11)', 'fig11_temp.png')
@@ -203,21 +223,21 @@ if data is not None:
     plot_contour(data, 'Y_O', 'O Mass Fraction (Fig 16)', 'fig16_o.png', cmap='plasma')
     plot_contour(data, 'Y_H', 'H Mass Fraction (Fig 17)', 'fig17_h.png', cmap='plasma')
 
-    # 2. Centerlines (Figs 4, 5, 7, 8)
+    # [cite_start]2. Centerlines (Figs 4, 5, 7, 8) [cite: 558, 572, 622, 645]
     plot_centerline(data, 'T', 'Centerline Temperature (Fig 7)', 'fig7_center_temp.png')
     plot_centerline(data, 'P', 'Centerline Pressure (Fig 8)', 'fig8_center_p.png')
     plot_centerline(data, 'Y_H2O', 'Centerline H2O (Fig 4)', 'fig4_center_h2o.png')
     plot_centerline(data, 'Y_O2', 'Centerline O2 (Fig 5)', 'fig5_center_o2.png')
     
-    # 3. Special Validation (Fig 6 Comparison)
+    # [cite_start]3. Special Validation (Fig 6 Comparison) [cite: 609]
     plot_centerline_validation(data, 'fig6_validation.png')
 
-# 4. Convergence
+# [cite_start]4. Convergence History [cite: 501]
 plot_convergence()
 
-# 5. Movies
-print("--- Generating Unsteady Animations ---")
-movie_files = files[::1] 
+# 5. Movies (Always Full History)
+print("--- Generating Unsteady Animations (Full History) ---")
+movie_files = files 
 
 # Physics
 make_movie_fixed(movie_files, 'T',    'movie_T.mp4',    cmap='jet')
