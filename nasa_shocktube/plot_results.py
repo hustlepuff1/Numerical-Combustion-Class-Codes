@@ -31,6 +31,27 @@ def load_dat(filepath):
     except Exception as e:
         return None
 
+# --- 0. Grid Plotter (Added) ---
+def plot_grid(data, title, filename):
+    X = data[:, :, 0]
+    Y = data[:, :, 1]
+    
+    fig, ax = plt.subplots(figsize=(10, 3))
+    
+    # Plot vertical lines (columns)
+    ax.plot(X.T, Y.T, 'k-', linewidth=0.5, alpha=0.5)
+    # Plot horizontal lines (rows)
+    ax.plot(X, Y, 'k-', linewidth=0.5, alpha=0.5)
+    
+    ax.set_title(title)
+    ax.set_xlabel("x (m)")
+    ax.set_ylabel("y (m)")
+    ax.set_aspect('equal')
+    
+    plt.savefig(OUTPUT_DIR / filename, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"Generated: {filename}")
+
 # --- 1. Contour Plotter ---
 def plot_contour(data, var_name, title, filename, cmap='jet'):
     if var_name not in VAR_MAP: return
@@ -212,7 +233,10 @@ print(f"--- Plotting Static Validation (Frame: {os.path.basename(str(target_file
 data = load_dat(target_file)
 
 if data is not None:
-    # [cite_start]1. Contours (Figs 9-17) [cite: 651, 661, 667, 677, 683, 693, 699, 709, 716]
+    # 0. Grid Plot
+    plot_grid(data, 'Computational Grid (201 x 15)', 'fig1_grid.png')
+
+    # 1. Contours (Figs 9-17)
     plot_contour(data, 'Mach', 'Mach Number (Fig 9)', 'fig9_mach.png')
     plot_contour(data, 'P', 'Static Pressure (Fig 10)', 'fig10_pressure.png')
     plot_contour(data, 'T', 'Static Temperature (Fig 11)', 'fig11_temp.png')
@@ -223,16 +247,16 @@ if data is not None:
     plot_contour(data, 'Y_O', 'O Mass Fraction (Fig 16)', 'fig16_o.png', cmap='plasma')
     plot_contour(data, 'Y_H', 'H Mass Fraction (Fig 17)', 'fig17_h.png', cmap='plasma')
 
-    # [cite_start]2. Centerlines (Figs 4, 5, 7, 8) [cite: 558, 572, 622, 645]
+    # 2. Centerlines (Figs 4, 5, 7, 8)
     plot_centerline(data, 'T', 'Centerline Temperature (Fig 7)', 'fig7_center_temp.png')
     plot_centerline(data, 'P', 'Centerline Pressure (Fig 8)', 'fig8_center_p.png')
     plot_centerline(data, 'Y_H2O', 'Centerline H2O (Fig 4)', 'fig4_center_h2o.png')
     plot_centerline(data, 'Y_O2', 'Centerline O2 (Fig 5)', 'fig5_center_o2.png')
     
-    # [cite_start]3. Special Validation (Fig 6 Comparison) [cite: 609]
+    # 3. Special Validation (Fig 6 Comparison)
     plot_centerline_validation(data, 'fig6_validation.png')
 
-# [cite_start]4. Convergence History [cite: 501]
+# 4. Convergence History
 plot_convergence()
 
 # 5. Movies (Always Full History)
