@@ -7,4 +7,4 @@ Contains CFD homework codes and some failed codes in the final_project folder.
 The real final project is in a folder named nasa_shocktube/.
 
 This has been also uploaded separately in a different repo.
----
+* Link : https://github.com/hustlepuff1/Hydrogen-Air-Combustion-in-a-Channel
